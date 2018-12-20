@@ -5,8 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Configuração Ambiente
 
 -Download Node.js versão 8.
+
 -Após a instalação do Node.js, instalar Angular-cli: $ npm install -g @angular/cli
+
 -Clonar o repositório
+
 -No diretório do repositório, executar: $ npm install
 
 ## Development server
