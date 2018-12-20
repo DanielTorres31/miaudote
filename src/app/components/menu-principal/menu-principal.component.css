@@ -1,0 +1,10 @@
+.fixed {
+    position: fixed;
+    overflow: hidden;
+    z-index: 100;
+    color: white !important;
+}
+
+.black {
+    background-color: #000000;
+}
