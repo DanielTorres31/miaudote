@@ -1,0 +1,10 @@
+<nav class="black-menu">
+    <div id="logo"></div>
+    <div class="align-right">
+        <ul class="nav">
+            <li *ngFor="let item of items" class="nav-item">
+                <a class="item-menu" (click)="navigate(item.route)">{{ item.label }}</a>
+            </li>
+        </ul>
+    </div>
+</nav>
