@@ -20,8 +20,8 @@
     flex-wrap: wrap;
     -webkit-box-align: end;
     align-items: flex-end;
-    -webkit-box-pack: justify;
-    justify-content: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
     padding: .5rem 1rem;
 }
 
