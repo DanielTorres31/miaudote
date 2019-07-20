@@ -1,3 +1,4 @@
+import { HomeModule } from './components/home/home.module';
 import { CarouselInitialModule } from './components/carousel-initial/carousel-initial.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { TopMenuModule } from './components/top-menu/top-menu.module';
     AppRoutingModule,
     HttpClientModule,
     TopMenuModule,
+    HomeModule,
     CarouselInitialModule,
   ],
   providers: [],
