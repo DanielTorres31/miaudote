@@ -1,10 +1,11 @@
-import { MenuPrincipalModule } from './components/menu-principal/menu-principal.module';
+import { CarouselInitialModule } from './components/carousel-initial/carousel-initial.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainIconModule } from './components/main-icon/main-icon.module';
+import { HttpClientModule } from '@angular/common/http';
+import { TopMenuModule } from './components/top-menu/top-menu.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +14,9 @@ import { MainIconModule } from './components/main-icon/main-icon.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MenuPrincipalModule,
-    MainIconModule,
+    HttpClientModule,
+    TopMenuModule,
+    CarouselInitialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
