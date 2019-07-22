@@ -11,11 +11,10 @@ export class TopMenuComponent implements OnInit {
   constructor(private router: Router) { }
 
   items = [
-    {label: 'INÍCIO', route: '/'},
+    {label: 'INÍCIO', route: ''},
     {label: 'QUEM SOMOS', route: 'quemsomos'},
-    {label: 'BUSCA', route: 'busca'},
     {label: 'COMO ADOTAR', route: 'comoadotar'},
-    {label: 'FALE CONOSCO', route: 'faleconosco'},
+    {label: 'LOGIN', route: 'login'},
   ]
 
   ngOnInit() {
