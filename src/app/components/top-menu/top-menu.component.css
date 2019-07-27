@@ -3,43 +3,6 @@
     background-color: #000000 !important;
 }
 
-.align-right {
-    display: flex;
-    justify-content: flex-end;
-}
-        
-.item-menu {
-    display: block !important;
-    padding: .7rem 2rem;
-}
-
-.navbar {
-    position: relative;
-    display: -webkit-box;
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-box-align: end;
-    align-items: flex-end;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-    padding: .5rem 1rem;
-}
-
-#logo {
-    width: 90px;
-    height: 95px;
-    background-image: url("../../../assets/logo/logomiaudote.png");
-    background-size: 75%;
-    border-radius: 10px;
-    padding: 10px;
-    background-repeat: no-repeat;
-    margin-left: 5%;
-    z-index: 100;
-    float:left;
-    margin-top: 5px;
-    background-position: 10px 0px;
-}
-
 a {
     text-decoration: none !important;
     color: #ffffff !important;

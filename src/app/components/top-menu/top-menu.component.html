@@ -1,10 +1,19 @@
-<nav class="black-menu">
-    <div id="logo"></div>
-    <div class="align-right">
-        <ul class="nav">
+<nav class="navbar navbar-expand-lg navbar-dark black-menu">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand">
+            <img src="../../../assets/logo/logomiaudote.png" width="30" height="35" />
+        </a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li *ngFor="let item of items" class="nav-item">
-                <a class="item-menu" (click)="navigate(item.route)">{{ item.label }}</a>
+                <a class="nav-link" (click)="navigate(item.route)">{{ item.label }}</a>
             </li>
         </ul>
     </div>
+
 </nav>
