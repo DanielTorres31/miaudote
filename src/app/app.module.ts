@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TopMenuModule } from './components/top-menu/top-menu.module';
+import { FooterModule } from './components/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { TopMenuModule } from './components/top-menu/top-menu.module';
     TopMenuModule,
     HomeModule,
     CarouselInitialModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
