@@ -9,6 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   
   constructor() { }
+    items = [
+      {icon: 'fa fa-facebook', url: 'https://www.facebook.com/'},
+      {icon: 'fa fa-twitter', url: '#'},
+      {icon: 'fa fa-instagram', url: '#'},
+      {icon: 'fa fa-google-plus', url: '#'},
+      {icon: 'fa fa-envelope', url: '#'}
+    ];
 
   ngOnInit() {
   }
