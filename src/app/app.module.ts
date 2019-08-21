@@ -1,3 +1,5 @@
+import { AnimalsViewModule } from './components/animals-view/animals-view.module';
+import { AnimalCardModule } from './components/animal-card/animal-card.module';
 import { HomeModule } from './components/home/home.module';
 import { CarouselInitialModule } from './components/carousel-initial/carousel-initial.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +24,8 @@ import { AboutUsModule } from './components/about-us/about-us.module';
     TopMenuModule,
     HomeModule,
     CarouselInitialModule,
+    AnimalCardModule,
+    AnimalsViewModule,
     FooterModule,
     AboutUsModule
   ],
