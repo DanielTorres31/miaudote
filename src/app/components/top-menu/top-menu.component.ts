@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-top-menu',
   templateUrl: './top-menu.component.html',
-  styleUrls: ['./top-menu.component.css']
+  styleUrls: ['./top-menu.component.scss']
 })
 export class TopMenuComponent implements OnInit {
 
