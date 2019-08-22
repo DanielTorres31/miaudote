@@ -1,0 +1,28 @@
+.image-content {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-button {
+    width: 100%;
+    border-color: #000;
+    background: #000;
+}
+
+.card-button:active {
+    border-color: #2b2a2a !important;
+    background: #2b2a2a !important;
+}
+
+.animal-name {
+    margin-top: -6%;
+    border: solid 1px #000;
+    background: #000;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 2px 50px;
+}
