@@ -9,24 +9,34 @@ export class CarouselInitialComponent implements OnInit {
 
   images = [
     { 
-      path: '../../../assets/carousel/s1.jpg', 
-      text: '"Não importa que sejam poucas as suas posses e o seu dinheiro. Ter um cão torna-o rico."' ,
-      author: '- Louis Sabin',
+      source: '../../../assets/carousel/s1.jpg', 
+      alt: '"Não importa que sejam poucas as suas posses e o seu dinheiro. Ter um cão torna-o rico."' ,
+      title: '- Louis Sabin',
     },
     { 
-      path: '../../../assets/carousel/s2.jpg', 
-      text: '"Só os meus cães nunca me trairão."' ,
-      author: '- Maria Callas',
+      source: '../../../assets/carousel/s2.jpg', 
+      alt: '"Só os meus cães nunca me trairão."' ,
+      title: '- Maria Callas',
     },
     { 
-      path: '../../../assets/carousel/s3.jpg', 
-      text: 'Adote, porque o amor não tem preço nem raça.',
-      author: '- Priscilla Oshiro Capitelli',
+      source: '../../../assets/carousel/s3.jpg', 
+      alt: 'Adote, porque o amor não tem preço nem raça.',
+      title: '- Priscilla Oshiro Capitelli',
     },
     { 
-      path: '../../../assets/carousel/s4.jpg', 
-      text: '"Um miau massageia o coração."',
-      author: '- Stuart McMillan',
+      source: '../../../assets/carousel/s4.jpg', 
+      alt: '"Um miau massageia o coração."',
+      title: '- Stuart McMillan',
+    },
+    { 
+      source: '../../../assets/carousel/s5.png', 
+      alt: '"Não importa que sejam poucas as suas posses e o seu dinheiro. Ter um cão torna-o rico."' ,
+      title: '- Louis Sabin',
+    },
+    { 
+      source: '../../../assets/carousel/s6.jpg', 
+      alt: '"Só os meus cães nunca me trairão."' ,
+      title: '- Maria Callas',
     },
   ]
 
