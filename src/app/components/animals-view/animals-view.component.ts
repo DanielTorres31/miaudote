@@ -14,7 +14,6 @@ export class AnimalsViewComponent implements OnInit {
   animals: Animal[] = new Array<Animal>();
 
   ngOnInit() {
-    console.log(this.animalService.buscarTodos());
     this.animalService.buscarTodos().subscribe((response: any) => {
       this.animals = response.data;
     });

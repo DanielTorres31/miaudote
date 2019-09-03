@@ -15,29 +15,19 @@ export class CarouselInitialComponent implements OnInit {
     },
     { 
       source: '../../../assets/carousel/s2.jpg', 
-      alt: '"Só os meus cães nunca me trairão."' ,
-      title: '- Maria Callas',
-    },
-    { 
-      source: '../../../assets/carousel/s3.jpg', 
-      alt: 'Adote, porque o amor não tem preço nem raça.',
+      alt: '"Adote, porque o amor não tem preço nem raça."' ,
       title: '- Priscilla Oshiro Capitelli',
     },
     { 
-      source: '../../../assets/carousel/s4.jpg', 
+      source: '../../../assets/carousel/s3.jpg',
       alt: '"Um miau massageia o coração."',
-      title: '- Stuart McMillan',
+      title: '- Stuart McMillan', 
     },
     { 
-      source: '../../../assets/carousel/s5.png', 
-      alt: '"Não importa que sejam poucas as suas posses e o seu dinheiro. Ter um cão torna-o rico."' ,
-      title: '- Louis Sabin',
-    },
-    { 
-      source: '../../../assets/carousel/s6.jpg', 
-      alt: '"Só os meus cães nunca me trairão."' ,
+      source: '../../../assets/carousel/s4.jpg', 
+      alt: '"Só os meus cães nunca me trairão."',
       title: '- Maria Callas',
-    },
+    }
   ]
 
   constructor() { }

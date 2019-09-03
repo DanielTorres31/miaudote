@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Animal } from 'src/app/shared/animal/animal.model';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-animal-card',
@@ -13,7 +14,7 @@ export class AnimalCardComponent implements OnInit {
 
   animalInFocus: boolean = false;
 
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer, private router: Router) { }
 
   ngOnInit() {
   }
@@ -22,28 +23,12 @@ export class AnimalCardComponent implements OnInit {
     this.animalInFocus = true;
   }
 
-  // I feel like this thread lacks concrete examples which made me have some difficulties:
-
-  // Import DomSanitizer:
-
-  // import { DomSanitizer } from '@angular/platform-browser';
-  // define in constructor:
-
-  // constructor(private _sanitizer: DomSanitizer) { }
-  // Sanitize the Base64 string you want to pass as your image source (use trustResourceUrl):
-
-  // this.imagePath = this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' 
-  //                 + toReturnImage.base64string);
-  // Bind to html:
-
-  // <img [src]="imagePath"> 
-
   animalFocusOut() {
     this.animalInFocus = false;
   }
 
-  navigateToDetails() {
-    console.log('Adotar');
+  navigateToDetails(route: string) {
+    this.router.navigate([route]);
   }
 
 }
