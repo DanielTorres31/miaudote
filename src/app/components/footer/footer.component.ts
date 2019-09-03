@@ -20,4 +20,8 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
+  defineClasseFooter() {
+    return window.innerWidth < 900 ? "footer-mobile" : "footer";
+  }
+
 }
