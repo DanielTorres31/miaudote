@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TopMenuModule } from './components/top-menu/top-menu.module';
 import { FooterModule } from './components/footer/footer.module';
 import { AboutUsModule } from './components/about-us/about-us.module';
+import { HowToAdoptModule } from './components/how-to-adopt/how-to-adopt.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AboutUsModule } from './components/about-us/about-us.module';
     AnimalCardModule,
     AnimalsViewModule,
     FooterModule,
-    AboutUsModule
+    AboutUsModule,
+    HowToAdoptModule
   ],
   providers: [],
   bootstrap: [AppComponent]
