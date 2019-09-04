@@ -8,7 +8,17 @@ section .section-title {
     margin-bottom: 50px;
     text-transform: uppercase;
 }
+
 .footer {
+    background: #050505 !important;
+    bottom: 0;
+    left: 0;
+    height: 20%;
+    position: fixed;
+    width: 100%;
+}
+
+.footerMobile {
     background: #050505 !important;
 }
 #footer h5{
