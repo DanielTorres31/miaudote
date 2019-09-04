@@ -1,4 +1,4 @@
-section {
+/*section {
     padding: 5px 0;
 }
 
@@ -8,7 +8,10 @@ section .section-title {
     margin-bottom: 50px;
     text-transform: uppercase;
 }
-.footer {
+
+
+
+.footerMobile {
     background: #050505 !important;
     position: fixed;
     bottom:0;
@@ -78,4 +81,52 @@ section .section-title {
     padding-bottom: 0px;
     margin-bottom: 10px;
 }
+}*/
+
+.footerMobile {
+    background: #050505 !important;
+}
+
+.footer {
+    background: #050505 !important;
+}
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */    
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+}
+/*
+   Multicoloured Hover Variations
+*/
+#social-fb:hover {
+    color: #3B5998;
+}
+#social-in:hover {
+    color: rgb(184, 53, 140);
+}
+#social-tw:hover {
+    color: #4099FF;
+}
+#social-gp:hover {
+    color: #d34836;
+}
+#social-em:hover {
+    color: #f39c12;
+}
+
+#itens{
+    color: #ffffff
 }
