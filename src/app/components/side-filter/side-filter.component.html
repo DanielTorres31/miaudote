@@ -1,0 +1,100 @@
+<div class="card filter">
+    <form>
+        <div class="form-group">
+            <label for="inputNome">Nome:</label>
+            <input id="inputNome" class="form-control" type="text" placeholder="Digite o nome do pet">
+        </div>
+
+        <hr>
+
+        <label for="divEspecie">Espécie:</label>
+        <div id="divEspecie">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="especie" id="especie1">
+                <label class="form-check-label" for="especie1">
+                    Todos
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="especie" id="especie2">
+                <label class="form-check-label" for="especie2">
+                    Cão
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="especie" id="especie3">
+                <label class="form-check-label" for="especie3">
+                    Gato
+                </label>
+            </div>
+        </div>
+
+        <hr>
+
+        <label for="divPorte">Porte:</label>
+        <div id="divPorte">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="porte1">
+                <label class="form-check-label" for="porte1">
+                    Pequeno
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="porte2">
+                <label class="form-check-label" for="porte2">
+                    Médio
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="porte3">
+                <label class="form-check-label" for="porte3">
+                    Grande
+                </label>
+            </div>
+        </div>
+
+        <hr>
+
+        <label for="divSexo">Sexo:</label>
+        <div id="divSexo">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sexo" id="sexo1">
+                <label class="form-check-label" for="sexo1">
+                    Todos
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sexo" id="sexo2">
+                <label class="form-check-label" for="sexo2">
+                    Macho
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="sexo" id="sexo3">
+                <label class="form-check-label" for="sexo3">
+                    Fêmea
+                </label>
+            </div>
+        </div>
+
+        <hr>
+
+        <label for="divIdade">Idade:</label>
+        <div id="divIdade">
+            <select class="custom-select">
+                <option selected>Escolha a idade</option>
+                <option value="1">Até 1 ano (Filhote)</option>
+                <option value="2">1 a 8 anos (Adulto)</option>
+                <option value="3">Acima de 8 anos (Idoso)</option>
+            </select>
+        </div>
+
+        <hr>
+
+        <div>
+            <button type="button" class="btn btn-primary">
+                Aplicar
+            </button>
+        </div>
+    </form>
+</div>
