@@ -1,27 +1,24 @@
 <footer [class]="defineFooter()">
-  <section id="footer">
-      <div class="container">
-          <div class="row">
-            <div class="col-xs-8 col-sm-8 col-md-8 text-left text-white" data-toggle="collapse">
-              <h3 class="text-white">Sobre</h3>
-              <p>Esse site foi desenvolvido pelos alunos do curso de Sistemas de Informação e Medicina Veterinária do Centro Universitário Newton Paiva</p>
-            </div>
-
-            <div class="col-xs-4 col-sm-4 col-md-4">
-              <h3 class="text-white">Contatos</h3>
-              <ul class="list-unstyled list-inline social text-left">
-                <li *ngFor="let item of items" class="list-inline-item">
-                    <a href="{{item.url}}"><i class="{{item.icon}}"></i></a>
-                </li>            
-              </ul>
-            </div>
-          </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-8 col-sm-8 col-md-8 text-left text-white" data-toggle="collapse">
+          <h3 class="text-white">Sobre</h3>
+          <p>Esse site foi desenvolvido pelos alunos do curso de Sistemas de Informação e Medicina Veterinária do Centro Universitário Newton Paiva</p>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4">
+          <h3 class="text-white">Contatos</h3>
+          <ul class="list-unstyled list-inline social text-left">
+            <li *ngFor="let item of items" class="list-inline-item">
+                <a id="itens" href="{{item.url}}" target="_blank"><i id="{{item.id}}" class="{{item.icon}}"></i></a>
+            </li>            
+          </ul>
+        </div>        
+        
       </div>
-      
-      <div class="footer-copyright grey darken-4">
-          <div class="container">
-            Projeto Miaudote
-          </div>
-      </div>
-  </section>
+    </div>
+    <div class="footer-copyright grey darken-4">
+        <div class="container">
+          Projeto Miaudote
+        </div>
+    </div>
 </footer>
