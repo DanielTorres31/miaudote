@@ -14,7 +14,8 @@ export class Animal {
         public NOM_INSTITUICAO?: string,
         public DES_ESPECIE?: string,
         public NOM_CIDADE?: string,
-        public NOM_ESTADO?: string
+        public NOM_ESTADO?: string,
+        public FOTO_ANIMAL?: string,
     ) {}
 
 }

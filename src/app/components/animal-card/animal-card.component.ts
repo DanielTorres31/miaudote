@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Animal } from 'src/app/shared/animal/animal.model';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { AnimalService } from 'src/app/shared/animal/animal.service';
 
 @Component({
   selector: 'app-animal-card',
@@ -14,9 +15,10 @@ export class AnimalCardComponent implements OnInit {
 
   animalInFocus: boolean = false;
 
-  constructor(private sanitizer: DomSanitizer, private router: Router) { }
+  constructor(private sanitizer: DomSanitizer, private router: Router, private animalService: AnimalService) { }
 
   ngOnInit() {
+
   }
 
   animalFocus() {

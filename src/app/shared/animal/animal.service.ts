@@ -15,4 +15,8 @@ export class AnimalService {
     return this.httpClient.get(this.urlService);
   }
 
+  buscarImagens(id: Number) {
+    return this.httpClient.get(`${this.urlService}/buscarImagens/${id}`)
+  }
+
 }
