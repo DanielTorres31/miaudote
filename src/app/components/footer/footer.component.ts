@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
   }
 
   defineClasseFooter() {
-    return window.innerWidth < 900 ? "footer-mobile" : "footer";
+    return window.innerWidth < 900 ? "footerMobile" : "footer";
   }
 
 
