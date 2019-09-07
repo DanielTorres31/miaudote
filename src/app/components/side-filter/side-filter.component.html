@@ -29,12 +29,8 @@
 
         <label for="divSexo">Sexo:</label>
         <div id="divSexo">
-            <div class="form-check" *ngFor="let sexo of sexoOptions; let i = index">
-                <input class="form-check-input" type="radio" name="sexo" id="sexo{{ i }}">
-                <label class="form-check-label" for="sexo{{ i }}">
-                    {{ sexo.label }}
-                </label>
-            </div>
+            <app-radio-button *ngFor="let sexo of sexoOptions; let i = index" [label]="sexo.label"
+                [name]="'sexo'" [id]="'sexo' + (i + 1)"></app-radio-button>
         </div>
 
         <hr>
