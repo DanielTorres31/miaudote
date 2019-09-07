@@ -17,12 +17,8 @@
 
         <label for="divPorte">Porte:</label>
         <div id="divPorte">
-            <div class="form-check" *ngFor="let porte of porteOptions; let i = index;">
-                <input class="form-check-input" type="checkbox" id="porte{{ i }}">
-                <label class="form-check-label" for="porte{{ i }}">
-                    {{ porte.label }}
-                </label>
-            </div>
+            <app-checkbox-button *ngFor="let porte of porteOptions; let i = index;" [label]="porte.label"
+                [name]="'porte' + (i + 1)" [id]="'porte' + (i + 1)" ></app-checkbox-button>
         </div>
 
         <hr>

@@ -1,3 +1,4 @@
+import { CheckboxButtonModule } from './../../html-components/checkbox-button/checkbox-button.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SideFilterComponent } from './side-filter.component';
@@ -11,6 +12,7 @@ import { RadioButtonModule } from 'src/app/html-components/radio-button/radio-bu
     CommonModule,
     ButtonsModule,
     RadioButtonModule,
+    CheckboxButtonModule,
   ],
   exports: [SideFilterComponent]
 })
