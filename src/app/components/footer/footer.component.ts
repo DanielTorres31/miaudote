@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isMobile } from '../../utils/screen-utils';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class FooterComponent implements OnInit {
   }
 
   defineClasseFooter() {
-    return window.innerWidth < 900 ? "footerMobile" : "footer";
+    return isMobile() ? "footerMobile" : "footer";
   }
 
 
