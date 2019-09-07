@@ -5,7 +5,6 @@
     align-content: center;
     position: relative;
     padding-left: 30px;
-    // cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -24,8 +23,8 @@
   /* Create a custom radio button */
 .checkmark {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 4px;
+    left: 4px;
     height: 15px;
     width: 15px;
     background-color: #eee;

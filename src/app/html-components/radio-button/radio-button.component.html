@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" (click)="click()">
     <input type="radio" [name]="name" [id]="id">
-    <label for="especie1">
+    <label [for]="id">
         {{ label }}
     </label>
-    <span class="checkmark" (click)="click()"></span>
+    <span class="checkmark"></span>
 </div>
