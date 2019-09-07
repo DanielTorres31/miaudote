@@ -9,12 +9,8 @@
 
         <label for="divEspecie">Espécie:</label>
         <div id="divEspecie">
-            <div class="form-check" *ngFor="let especie of especieOptions; let i = index">
-                <input class="form-check-input" type="radio" name="especie" id="especie{{ i }}">
-                <label class="form-check-label" for="especie{{ i }}">
-                    {{ especie.label }}
-                </label>
-            </div>
+            <app-radio-button *ngFor="let especie of especieOptions; let i = index" [label]="especie.label"
+                [name]="'especie'" [id]="'especie' + (i + 1)"></app-radio-button>
         </div>
 
         <hr>
