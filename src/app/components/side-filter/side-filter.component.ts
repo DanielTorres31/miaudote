@@ -15,10 +15,22 @@ export class SideFilterComponent implements OnInit {
     {label: 'Gato', value: 'Gato'},
   ]
 
-  states = [
-    {label: 'Minas Gerais', value: 'Minas Gerais'},
-    {label: 'São Paulo', value: 'São Paulo'},
-    {label: 'Rio de Janeiro', value: 'Rio de Janeiro'},
+  porteOptions = [
+    {label: 'Pequeno', value: 'Pequeno'},
+    {label: 'Médio', value: 'Médio'},
+    {label: 'Grande', value: 'Grande'},
+  ]
+
+  sexoOptions = [
+    {label: 'Todos', value: 'Todos'},
+    {label: 'Macho', value: 'Macho'},
+    {label: 'Fêmea', value: 'Fêmea'},
+  ]
+
+  idadeOptions = [
+    {label: 'Até 1 ano (Filhote)', value: 'Até 1 ano (Filhote)'},
+    {label: '1 a 8 anos (Adulto)', value: '1 a 8 anos (Adulto)'},
+    {label: 'Acima de 8 anos (Idoso)', value: 'Acima de 8 anos (Idoso)'},
   ]
 
   constructor() { }

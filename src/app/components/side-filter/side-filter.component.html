@@ -9,22 +9,10 @@
 
         <label for="divEspecie">Espécie:</label>
         <div id="divEspecie">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="especie" id="especie1">
-                <label class="form-check-label" for="especie1">
-                    Todos
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="especie" id="especie2">
-                <label class="form-check-label" for="especie2">
-                    Cão
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="especie" id="especie3">
-                <label class="form-check-label" for="especie3">
-                    Gato
+            <div class="form-check" *ngFor="let especie of especieOptions; let i = index">
+                <input class="form-check-input" type="radio" name="especie" id="especie{{ i }}">
+                <label class="form-check-label" for="especie{{ i }}">
+                    {{ especie.label }}
                 </label>
             </div>
         </div>
@@ -33,22 +21,10 @@
 
         <label for="divPorte">Porte:</label>
         <div id="divPorte">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="porte1">
-                <label class="form-check-label" for="porte1">
-                    Pequeno
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="porte2">
-                <label class="form-check-label" for="porte2">
-                    Médio
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="porte3">
-                <label class="form-check-label" for="porte3">
-                    Grande
+            <div class="form-check" *ngFor="let porte of porteOptions; let i = index;">
+                <input class="form-check-input" type="checkbox" id="porte{{ i }}">
+                <label class="form-check-label" for="porte{{ i }}">
+                    {{ porte.label }}
                 </label>
             </div>
         </div>
@@ -57,22 +33,10 @@
 
         <label for="divSexo">Sexo:</label>
         <div id="divSexo">
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="sexo" id="sexo1">
-                <label class="form-check-label" for="sexo1">
-                    Todos
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="sexo" id="sexo2">
-                <label class="form-check-label" for="sexo2">
-                    Macho
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="sexo" id="sexo3">
-                <label class="form-check-label" for="sexo3">
-                    Fêmea
+            <div class="form-check" *ngFor="let sexo of sexoOptions; let i = index">
+                <input class="form-check-input" type="radio" name="sexo" id="sexo{{ i }}">
+                <label class="form-check-label" for="sexo{{ i }}">
+                    {{ sexo.label }}
                 </label>
             </div>
         </div>
@@ -83,9 +47,7 @@
         <div id="divIdade">
             <select class="custom-select">
                 <option selected>Escolha a idade</option>
-                <option value="1">Até 1 ano (Filhote)</option>
-                <option value="2">1 a 8 anos (Adulto)</option>
-                <option value="3">Acima de 8 anos (Idoso)</option>
+                <option *ngFor="let idade of idadeOptions" value="1">{{ idade.label }}</option>
             </select>
         </div>
 
