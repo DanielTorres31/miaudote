@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { CarouselInitialModule } from '../carousel-initial/carousel-initial.module';
+import {CardModule} from 'primeng/card';
+import {FieldsetModule} from 'primeng/fieldset';
+import {PanelModule} from 'primeng/panel';
 
 
 
@@ -13,7 +16,10 @@ import { CarouselInitialModule } from '../carousel-initial/carousel-initial.modu
     CommonModule,
     SideFilterModule,
     AnimalsViewModule,
-    CarouselInitialModule
+    CarouselInitialModule,
+    CardModule,
+    FieldsetModule,
+    PanelModule
   ]
 })
 export class HomeModule { }
