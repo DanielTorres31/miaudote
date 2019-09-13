@@ -12,10 +12,49 @@ body {
     height:100%;
 }
 
-html {height:100%;}
+html {
+    height:100%;
+}
 
 .geral {
     min-height:100%;
     position: relative;
     width:100%;
+}
+
+input {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+input:focus {
+    border-color: gray !important;
+}
+
+select {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+select:focus {
+    border-color: gray !important;
+}
+
+option:hover {
+    background-color: pink !important;
+}
+
+button {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+button:focus {
+    border-color: gray !important;
 }
