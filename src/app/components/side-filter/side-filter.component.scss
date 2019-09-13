@@ -13,3 +13,20 @@
 .filter-button:active {
     background: #2b2a2a !important;
 }
+
+.filter-button-mobile {
+    width: 80%;
+    border-bottom: 10px;
+    background-color: white !important;
+    border-color: white !important;
+    box-shadow: 2px 2px 2px gray !important;
+}
+
+.filter-button-mobile:focus {
+    border-color: white !important;
+}
+
+#filter-icon {
+    font-size: 42px;
+    color: black;
+}

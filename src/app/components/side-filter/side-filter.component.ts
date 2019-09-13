@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { isMobile } from '../../utils/screen-utils';
 
 @Component({
   selector: 'app-side-filter',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideFilterComponent implements OnInit {
 
+  isMobileButtonVisible: boolean = true;
+  divFilterClass: string = '';
+  
   header = 'Filtros';
 
   especieOptions = [
@@ -36,6 +40,17 @@ export class SideFilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.defineFilterClass();
+  }
+
+  defineFilterClass() {
+    if (isMobile()) {
+      this.isMobileButtonVisible = true;
+      this.divFilterClass = 'collapse';
+      return;
+    }
+    this.isMobileButtonVisible = false;
+    this.divFilterClass = '';
   }
 
 }

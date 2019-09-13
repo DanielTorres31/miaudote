@@ -1,50 +1,59 @@
-<div class="card filter">
-    <form>
-        <div class="form-group">
-            <label for="inputNome">Nome:</label>
-            <input id="inputNome" class="form-control" type="text" placeholder="Digite o nome do pet">
-        </div>
+<div class="row justify-content-center">
+    <button *ngIf="isMobileButtonVisible" class="btn btn-primary filter-button-mobile" data-toggle="collapse" href="#side-filter" role="button" aria-expanded="false"
+        aria-controls="side-filter">
+        <i id="filter-icon" class="fa fa-filter" aria-hidden="true"></i>
+    </button>
+</div>
 
-        <hr>
+<div [class]="divFilterClass" id="side-filter">
+    <div class="card filter">
+        <form>
+            <div class="form-group">
+                <label for="inputNome">Nome:</label>
+                <input id="inputNome" class="form-control" type="text" placeholder="Digite o nome do pet">
+            </div>
 
-        <label for="divEspecie">Espécie:</label>
-        <div id="divEspecie">
-            <app-radio-button *ngFor="let especie of especieOptions; let i = index" [label]="especie.label"
-                [name]="'especie'" [id]="'especie' + (i + 1)"></app-radio-button>
-        </div>
+            <hr>
 
-        <hr>
+            <label for="divEspecie">Espécie:</label>
+            <div id="divEspecie">
+                <app-radio-button *ngFor="let especie of especieOptions; let i = index" [label]="especie.label"
+                    [name]="'especie'" [id]="'especie' + (i + 1)"></app-radio-button>
+            </div>
 
-        <label for="divPorte">Porte:</label>
-        <div id="divPorte">
-            <app-checkbox-button *ngFor="let porte of porteOptions; let i = index;" [label]="porte.label"
-                [name]="'porte' + (i + 1)" [id]="'porte' + (i + 1)" ></app-checkbox-button>
-        </div>
+            <hr>
 
-        <hr>
+            <label for="divPorte">Porte:</label>
+            <div id="divPorte">
+                <app-checkbox-button *ngFor="let porte of porteOptions; let i = index;" [label]="porte.label"
+                    [name]="'porte' + (i + 1)" [id]="'porte' + (i + 1)"></app-checkbox-button>
+            </div>
 
-        <label for="divSexo">Sexo:</label>
-        <div id="divSexo">
-            <app-radio-button *ngFor="let sexo of sexoOptions; let i = index" [label]="sexo.label"
-                [name]="'sexo'" [id]="'sexo' + (i + 1)"></app-radio-button>
-        </div>
+            <hr>
 
-        <hr>
+            <label for="divSexo">Sexo:</label>
+            <div id="divSexo">
+                <app-radio-button *ngFor="let sexo of sexoOptions; let i = index" [label]="sexo.label" [name]="'sexo'"
+                    [id]="'sexo' + (i + 1)"></app-radio-button>
+            </div>
 
-        <label for="divIdade">Idade:</label>
-        <div id="divIdade">
-            <select class="custom-select">
-                <option selected>Escolha a idade</option>
-                <option *ngFor="let idade of idadeOptions" value="1">{{ idade.label }}</option>
-            </select>
-        </div>
+            <hr>
 
-        <hr>
+            <label for="divIdade">Idade:</label>
+            <div id="divIdade">
+                <select class="custom-select">
+                    <option selected>Escolha a idade</option>
+                    <option *ngFor="let idade of idadeOptions" value="1">{{ idade.label }}</option>
+                </select>
+            </div>
 
-        <div>
-            <button type="button" class="filter-button">
-                Aplicar
-            </button>
-        </div>
-    </form>
+            <hr>
+
+            <div>
+                <button type="button" class="filter-button">
+                    Aplicar
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
