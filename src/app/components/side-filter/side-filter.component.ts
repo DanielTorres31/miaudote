@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { isMobile } from '../../utils/screen-utils';
+import { SideFilter } from './shared/side-filter.model';
 
 @Component({
   selector: 'app-side-filter',
@@ -9,7 +10,6 @@ import { isMobile } from '../../utils/screen-utils';
 export class SideFilterComponent implements OnInit {
 
   isMobileButtonVisible: boolean = true;
-  divFilterClass: string = '';
   
   header = 'Filtros';
 
@@ -20,6 +20,7 @@ export class SideFilterComponent implements OnInit {
   ]
 
   porteOptions = [
+    {label: 'Todos', value: 'Todos'},
     {label: 'Pequeno', value: 'Pequeno'},
     {label: 'Médio', value: 'Médio'},
     {label: 'Grande', value: 'Grande'},
@@ -37,20 +38,48 @@ export class SideFilterComponent implements OnInit {
     {label: 'Acima de 8 anos (Idoso)', value: 'Acima de 8 anos (Idoso)'},
   ]
 
+  filter: SideFilter = new SideFilter();
+
   constructor() { }
 
   ngOnInit() {
-    this.defineFilterClass();
   }
 
   defineFilterClass() {
-    if (isMobile()) {
-      this.isMobileButtonVisible = true;
-      this.divFilterClass = 'collapse';
-      return;
+    if(isMobile()) {
+      this.enableMobileButton();
+      return 'collapse'
     }
+    this.disableMobileButton()
+    return '';
+  }
+
+  applyFilter() {
+    console.log(this.filter);
+  }
+
+  especieChanged(valueChanged: any) {
+    this.filter.especie = valueChanged.value;
+  }
+
+  sexoChanged(valueChanged: any) {
+    this.filter.sexo = valueChanged.value;
+  }
+
+  porteChanged(valueChanged: any) {
+    this.filter.porte = valueChanged.value;
+  }
+
+  idadeChanged(valueChanged: any) {
+    this.filter.idade = valueChanged;
+  }
+
+  enableMobileButton() {
+    this.isMobileButtonVisible = true;
+  }
+
+  disableMobileButton() {
     this.isMobileButtonVisible = false;
-    this.divFilterClass = '';
   }
 
 }

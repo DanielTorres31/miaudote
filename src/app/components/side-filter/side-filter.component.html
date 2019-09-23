@@ -5,12 +5,12 @@
     </button>
 </div>
 
-<div [class]="divFilterClass" id="side-filter">
+<div [class]="defineFilterClass()" id="side-filter">
     <div class="card filter">
         <form>
             <div class="form-group">
                 <label for="inputNome">Nome:</label>
-                <input id="inputNome" class="form-control" type="text" placeholder="Digite o nome do pet">
+                <input id="inputNome" class="form-control" type="text" placeholder="Digite o nome do pet" name="nome" [(ngModel)]="filter.nome" >
             </div>
 
             <hr>
@@ -18,15 +18,15 @@
             <label for="divEspecie">Espécie:</label>
             <div id="divEspecie">
                 <app-radio-button *ngFor="let especie of especieOptions; let i = index" [label]="especie.label"
-                    [name]="'especie'" [id]="'especie' + (i + 1)"></app-radio-button>
+                    [name]="'especie'" [id]="'especie' + (i + 1)" (valueChanged)="especieChanged($event)" ></app-radio-button>
             </div>
 
             <hr>
 
             <label for="divPorte">Porte:</label>
             <div id="divPorte">
-                <app-checkbox-button *ngFor="let porte of porteOptions; let i = index;" [label]="porte.label"
-                    [name]="'porte' + (i + 1)" [id]="'porte' + (i + 1)"></app-checkbox-button>
+                <app-radio-button *ngFor="let porte of porteOptions; let i = index;" [label]="porte.label"
+                    [name]="'porte'" [id]="'porte' + (i + 1)" (valueChanged)="porteChanged($event)" ></app-radio-button>
             </div>
 
             <hr>
@@ -34,14 +34,14 @@
             <label for="divSexo">Sexo:</label>
             <div id="divSexo">
                 <app-radio-button *ngFor="let sexo of sexoOptions; let i = index" [label]="sexo.label" [name]="'sexo'"
-                    [id]="'sexo' + (i + 1)"></app-radio-button>
+                    [id]="'sexo' + (i + 1)" (valueChanged)="sexoChanged($event)" ></app-radio-button>
             </div>
 
             <hr>
 
             <label for="divIdade">Idade:</label>
             <div id="divIdade">
-                <select class="custom-select">
+                <select class="custom-select" (click)="idadeChanged($event.target.value)">
                     <option selected>Escolha a idade</option>
                     <option *ngFor="let idade of idadeOptions" value="1">{{ idade.label }}</option>
                 </select>
@@ -50,7 +50,7 @@
             <hr>
 
             <div>
-                <button type="button" class="filter-button">
+                <button type="button" class="filter-button" (click)="applyFilter()">
                     Aplicar
                 </button>
             </div>
