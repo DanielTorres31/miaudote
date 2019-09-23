@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
 
   }
 
-  defineClasseFooter() {
+  defineClassFooter() {
     return isMobile() ? "footerMobile" : "footer";
   }
 
