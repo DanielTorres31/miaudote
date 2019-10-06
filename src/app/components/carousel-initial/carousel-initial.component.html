@@ -1,3 +1,9 @@
-<p-galleria [images]="images" panelHeight="400" panelWidth="70%" [showCaption]="true"  [showFilmstrip]="false"
-            transitionInterval="5000">
-</p-galleria>
+<carousel [showIndicators]="false" [interval]="3000">
+  <slide *ngFor="let image of images">
+    <img [src]="image.source" [alt]="image.alt" style="display: block; width: 100%; height: 400px; max-height: 400px;">
+    <div class="carousel-caption d-none d-md-block">
+      <h3>{{ image.title }}</h3>
+      <p>{{ image.alt }}</p>
+    </div>
+  </slide>
+</carousel>

@@ -9,24 +9,19 @@ export class CarouselInitialComponent implements OnInit {
 
   images = [
     { 
-      source: '../../../assets/carousel/s1.jpg', 
+      source: '../../../assets/carousel/carousel-image-1-1024x400.png', 
       alt: '"Não importa que sejam poucas as suas posses e o seu dinheiro. Ter um cão torna-o rico."' ,
-      title: '- Louis Sabin',
+      title: 'Louis Sabin',
     },
     { 
-      source: '../../../assets/carousel/s2.jpg', 
+      source: '../../../assets/carousel/carousel-image-2-1024x400.png', 
       alt: '"Adote, porque o amor não tem preço nem raça."' ,
-      title: '- Priscilla Oshiro Capitelli',
+      title: 'Priscilla Ochiro Capitelli',
     },
     { 
-      source: '../../../assets/carousel/s3.jpg',
+      source: '../../../assets/carousel/carousel-image-3-1024x400.png',
       alt: '"Um miau massageia o coração."',
-      title: '- Stuart McMillan', 
-    },
-    { 
-      source: '../../../assets/carousel/s4.jpg', 
-      alt: '"Só os meus cães nunca me trairão."',
-      title: '- Maria Callas',
+      title: 'Stuart McMillan', 
     }
   ]
 
