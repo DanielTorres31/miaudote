@@ -13,24 +13,14 @@ export class AnimalCardComponent implements OnInit {
 
   @Input() animal: Animal = new Animal();
 
-  animalInFocus: boolean = false;
-
   constructor(private sanitizer: DomSanitizer, private router: Router, private animalService: AnimalService) { }
 
   ngOnInit() {
 
   }
 
-  animalFocus() {
-    this.animalInFocus = true;
-  }
-
-  animalFocusOut() {
-    this.animalInFocus = false;
-  }
-
-  navigateToDetails(route: string) {
-    this.router.navigate([route]);
+  navigateToDetails() {
+    this.router.navigate(['/']);
   }
 
 }
