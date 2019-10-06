@@ -15,7 +15,10 @@ export class Animal {
         public DES_ESPECIE?: string,
         public NOM_CIDADE?: string,
         public NOM_ESTADO?: string,
-        public FOTO_ANIMAL?: string,
+        public NOM_FOTO?: string,
+        public IND_FOTO_PRINCIPAL?: boolean,
+        public TIP_FOTO?: string,
+        public BIN_FOTO?: string,
     ) {}
 
 }

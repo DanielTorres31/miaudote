@@ -11,8 +11,12 @@ export class AnimalService {
 
   urlService = `${environment.urlApi}/Animal.php/`;
 
-  buscarTodos() {
-    return this.httpClient.get(this.urlService);
+  buscarTodos(retornarImagem = false) {
+    return this.httpClient.get(this.urlService, {
+      params: {
+        retornarImagem: retornarImagem ? 'T' : 'F'
+      }
+    });
   }
 
   buscarImagens(id: Number) {
