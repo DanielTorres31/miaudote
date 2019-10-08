@@ -12,6 +12,7 @@ import { TopMenuModule } from './components/top-menu/top-menu.module';
 import { FooterModule } from './components/footer/footer.module';
 import { AboutUsModule } from './components/about-us/about-us.module';
 import { HowToAdoptModule } from './components/how-to-adopt/how-to-adopt.module';
+import { AnimalDetailModule } from './components/animal-detail/animal-detail.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HowToAdoptModule } from './components/how-to-adopt/how-to-adopt.module'
     AnimalsViewModule,
     FooterModule,
     AboutUsModule,
-    HowToAdoptModule
+    HowToAdoptModule,
+    AnimalDetailModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
