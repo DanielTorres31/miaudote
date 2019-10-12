@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimalDetailComponent } from './animal-detail.component';
+import { AnimalService } from 'src/app/shared/animal/animal.service';
 
 
 
@@ -9,6 +10,7 @@ import { AnimalDetailComponent } from './animal-detail.component';
   imports: [
     CommonModule
   ],
-  exports: [AnimalDetailComponent]
+  exports: [AnimalDetailComponent],
+  providers: [AnimalService]
 })
 export class AnimalDetailModule { }

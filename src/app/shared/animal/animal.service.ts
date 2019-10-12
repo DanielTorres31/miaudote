@@ -9,9 +9,9 @@ export class AnimalService {
 
   constructor(private httpClient: HttpClient) { }
 
-  urlService = `${environment.urlApi}/Animal.php/`;
+  urlService = `${environment.urlApi}/Animal.php`;
 
-  buscarTodos(retornarImagem = false) {
+  buscarTodos(retornarImagem: boolean = false) {
     return this.httpClient.get(this.urlService, {
       params: {
         retornarImagem: retornarImagem ? 'T' : 'F'
@@ -19,8 +19,12 @@ export class AnimalService {
     });
   }
 
-  buscarImagens(id: Number) {
-    return this.httpClient.get(`${this.urlService}/buscarImagens/${id}`)
+  buscarPorId(id: number, retornarImagem: boolean = false) {
+    return this.httpClient.get(`${this.urlService}/${id}`, {
+      params: {
+        retornarImagem: retornarImagem ? 'T' : 'F'
+      }
+    });
   }
 
 }
