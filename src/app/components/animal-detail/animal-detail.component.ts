@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AnimalService } from 'src/app/shared/animal/animal.service';
+import { Animal } from 'src/app/shared/animal/animal.model';
 
 @Component({
   selector: 'app-animal-detail',
@@ -8,12 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AnimalDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  animal: Animal = new Animal();
+
+  constructor(private route: ActivatedRoute, private animalService: AnimalService) { }
 
   ngOnInit() {
     this.route.params.subscribe(param => {
 
-      console.log(param['id']);
+      this.animalService.buscarPorId(param['id'], true).subscribe((response: any) => {
+        this.animal = response.data;
+      });
 
     });
   }

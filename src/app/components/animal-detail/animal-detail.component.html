@@ -1,1 +1,25 @@
-<p>animal-detail works!</p>
+<span>Nome: {{ animal.NOM_ANIMAL }}</span>
+<br>
+<span>Ind. Idade: {{ animal.IND_IDADE }}</span>
+<br>
+<span>Ind. Porte: {{ animal.IND_PORTE }}</span>
+<br>
+<span>Ind. Sexo: {{ animal.IND_SEXO_ANIMAL }}</span>
+<br>
+<span>Castrado: {{ animal.IND_CASTRADO }}</span>
+<br>
+<span>Observação: {{ animal.DES_OBSERVACAO }}</span>
+<br>
+<span>Vacinas: {{ animal.DES_VACINA }}</span>
+<br>
+<span>Temperamento: {{ animal.DES_TEMPERAMENTO }}</span>
+<br>
+<span>Instituição: {{ animal.NOM_INSTITUICAO }}</span>
+<br>
+<span>Espécie: {{ animal.DES_ESPECIE }}</span>
+<br>
+<span>Cidade: {{ animal.NOM_CIDADE }}</span>
+<br>
+<span>Estado: {{ animal.NOM_ESTADO }}</span>
+<br>
+<img [src]="animal.BIN_FOTO" />
