@@ -13,6 +13,7 @@ import { FooterModule } from './components/footer/footer.module';
 import { AboutUsModule } from './components/about-us/about-us.module';
 import { HowToAdoptModule } from './components/how-to-adopt/how-to-adopt.module';
 import { AnimalDetailModule } from './components/animal-detail/animal-detail.module';
+import { LoginModule } from './components/login/login.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AnimalDetailModule } from './components/animal-detail/animal-detail.mod
     AboutUsModule,
     HowToAdoptModule,
     AnimalDetailModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
