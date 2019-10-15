@@ -14,6 +14,7 @@ import { AboutUsModule } from './components/about-us/about-us.module';
 import { HowToAdoptModule } from './components/how-to-adopt/how-to-adopt.module';
 import { AnimalDetailModule } from './components/animal-detail/animal-detail.module';
 import { LoginModule } from './components/login/login.module';
+import { AppService } from './shared/app/app.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { LoginModule } from './components/login/login.module';
     AnimalDetailModule,
     LoginModule
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
