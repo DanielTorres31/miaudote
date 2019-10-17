@@ -15,6 +15,7 @@ import { HowToAdoptModule } from './components/how-to-adopt/how-to-adopt.module'
 import { AnimalDetailModule } from './components/animal-detail/animal-detail.module';
 import { LoginModule } from './components/login/login.module';
 import { AppService } from './shared/app/app.service';
+import { HomeAdminModule } from './components/home-admin/home-admin.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AppService } from './shared/app/app.service';
     AboutUsModule,
     HowToAdoptModule,
     AnimalDetailModule,
-    LoginModule
+    LoginModule,
+    HomeAdminModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
