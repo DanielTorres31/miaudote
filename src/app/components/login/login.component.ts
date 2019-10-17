@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from 'src/app/shared/app/app.service';
+import { AuthService } from './shared/auth.service';
+import { Login } from './shared/login.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +11,20 @@ import { AppService } from 'src/app/shared/app/app.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  constructor(private appService: AppService) { }
+  login: Login = new Login();
+
+  constructor(private router: Router, private appService: AppService, private authService: AuthService) { }
 
   ngOnInit() {
     this.hideMenu();
+  }
+
+  sendLogin() {
+    this.authService.login(this.login).subscribe((response: any) => {
+      if(!response.erro) {
+        this.router.navigate(['admin']);
+      }
+    })
   }
 
   ngOnDestroy() {
@@ -25,6 +38,5 @@ export class LoginComponent implements OnInit, OnDestroy {
   hideMenu() {
     this.appService.updateMainMenuVisibility(false);
   }
-
 
 }
