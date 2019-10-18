@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AppService } from './shared/app/app.service';
 
 @Component({
@@ -9,13 +9,14 @@ import { AppService } from './shared/app/app.service';
 export class AppComponent implements OnInit {
   title = 'Miaudote';
 
-  isMainMenuVisible: boolean = true;
+  isMainMenuVisible: boolean;
 
-  public constructor(private appService: AppService) {}  
+  public constructor(private appService: AppService, private changeDetector: ChangeDetectorRef) {}  
 
   public ngOnInit() {
     this.appService.isMainMenuVisible.subscribe(isMainMenuVisible => {
-      this.isMainMenuVisible = isMainMenuVisible
+      this.isMainMenuVisible = isMainMenuVisible;
+      this.changeDetector.detectChanges();
     });
   }
 
