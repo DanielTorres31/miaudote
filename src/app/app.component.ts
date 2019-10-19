@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
   public constructor(private appService: AppService, private changeDetector: ChangeDetectorRef) {}  
 
   public ngOnInit() {
+    this.changeVisibilityMainMenu();
+  }
+
+  changeVisibilityMainMenu() {
     this.appService.isMainMenuVisible.subscribe(isMainMenuVisible => {
       this.isMainMenuVisible = isMainMenuVisible;
       this.changeDetector.detectChanges();
