@@ -6,13 +6,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppService {
 
-    private dataSource = new BehaviorSubject<boolean>(true);
-    isMainMenuVisible = this.dataSource.asObservable();
+    private dataSourceMainMenuVisibility = new BehaviorSubject<boolean>(true);
+    isMainMenuVisible = this.dataSourceMainMenuVisibility.asObservable();
 
     constructor() { }
 
     public updateMainMenuVisibility(isMainMenuVisible: boolean) {
-        this.dataSource.next(isMainMenuVisible);
+        this.dataSourceMainMenuVisibility.next(isMainMenuVisible);
     }
 
 }

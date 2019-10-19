@@ -16,6 +16,7 @@ import { AnimalDetailModule } from './components/animal-detail/animal-detail.mod
 import { LoginModule } from './components/login/login.module';
 import { AppService } from './shared/app/app.service';
 import { HomeAdminModule } from './components/home-admin/home-admin.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,9 +37,12 @@ import { HomeAdminModule } from './components/home-admin/home-admin.module';
     HowToAdoptModule,
     AnimalDetailModule,
     LoginModule,
-    HomeAdminModule
+    HomeAdminModule,
   ],
-  providers: [AppService],
+  providers: [
+    AppService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
