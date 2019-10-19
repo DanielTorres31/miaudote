@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Animal } from 'src/app/shared/animal/animal.model';
+import { Animal } from 'src/app/components/animal/shared/animal.model';
 import { Router } from '@angular/router';
-import { AnimalService } from 'src/app/shared/animal/animal.service';
 
 @Component({
   selector: 'app-animal-card',
