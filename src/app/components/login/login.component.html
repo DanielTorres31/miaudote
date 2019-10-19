@@ -7,7 +7,7 @@
             <input type="text" [(ngModel)]="login.email" name="email" class="form-control width-100" placeholder="E-mail">
             <input type="password" [(ngModel)]="login.senha" name="senha" class="form-control width-100" placeholder="Senha">
             <button type="button" class="btn btn-dark width-100" (click)="sendLogin()">Acessar</button>
-            <p-messages [key]="MESSAGE_KEY" [(value)]="msgs"></p-messages>
+            <p-messages [key]="MESSAGE_KEY"></p-messages>
         </div>
     </div>
 </div>
