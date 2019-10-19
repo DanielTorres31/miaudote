@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeAdminComponent } from './home-admin.component';
+import { AdminMenuModule } from '../admin-menu/admin-menu.module';
 
 
 
 @NgModule({
   declarations: [HomeAdminComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AdminMenuModule
   ],
   exports: [HomeAdminComponent]
 })
