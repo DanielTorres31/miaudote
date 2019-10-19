@@ -1,0 +1,12 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th *ngFor="let header of headers" scope="col">{{ header.label }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let element of list">
+            <td *ngFor="let header of headers">{{ element[header.value] }}</td>
+        </tr>
+    </tbody>
+</table>
