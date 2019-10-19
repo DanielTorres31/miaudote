@@ -1,0 +1,15 @@
+<div class="card admin-menu" style="height: 1000px !important;">
+
+    <div class="d-flex justify-content-center logo">
+        <img src="../../../assets/logo/logomiaudote.png" height="100" />
+    </div>
+
+    <ul class="nav flex-column" *ngFor="let item of items">
+        <li class="nav-item">
+            <div class="d-flex align-items-center container-item">
+                <i [class]="item.icon" aria-hidden="true"></i>
+                <a class="nav-link">{{ item.label }}</a>
+            </div>
+        </li>
+    </ul>
+</div>
