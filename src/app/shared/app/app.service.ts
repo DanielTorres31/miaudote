@@ -9,10 +9,18 @@ export class AppService {
     private dataSourceMainMenuVisibility = new BehaviorSubject<boolean>(true);
     isMainMenuVisible = this.dataSourceMainMenuVisibility.asObservable();
 
+    private dataSourceAdminMenuVisibility = new BehaviorSubject<boolean>(false);
+    isAdminMenuVisible = this.dataSourceAdminMenuVisibility.asObservable();
+
     constructor() { }
 
     public updateMainMenuVisibility(isMainMenuVisible: boolean) {
         this.dataSourceMainMenuVisibility.next(isMainMenuVisible);
     }
+
+    public updateAdminMenuVisibility(isAdminMenuVisible: boolean) {
+        this.dataSourceAdminMenuVisibility.next(isAdminMenuVisible);
+    }
+
 
 }
