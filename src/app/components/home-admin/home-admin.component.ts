@@ -1,29 +1,14 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AppService } from 'src/app/shared/app/app.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home-admin',
   templateUrl: './home-admin.component.html',
   styleUrls: ['./home-admin.component.scss']
 })
-export class HomeAdminComponent implements OnInit, OnDestroy {
+export class HomeAdminComponent implements OnInit {
 
-  constructor(private appService: AppService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.hideMainMenu();
-  }
-
-  ngOnDestroy() {
-    this.showMainMenu();
-  }
-
-  hideMainMenu() {
-    this.appService.updateMainMenuVisibility(false);
-  }
-
-  showMainMenu() {
-    this.appService.updateMainMenuVisibility(true);
-  }
+  ngOnInit() { }
 
 }

@@ -10,16 +10,25 @@ export class AppComponent implements OnInit {
   title = 'Miaudote';
 
   isMainMenuVisible: boolean;
+  isAdminMenuVisible: boolean;
 
   public constructor(private appService: AppService, private changeDetector: ChangeDetectorRef) {}  
 
   public ngOnInit() {
-    this.changeVisibilityMainMenu();
+    this.handleVisibilityMainMenu();
+    this.handleVisibilityAdminMenu();
   }
 
-  changeVisibilityMainMenu() {
+  handleVisibilityMainMenu() {
     this.appService.isMainMenuVisible.subscribe(isMainMenuVisible => {
       this.isMainMenuVisible = isMainMenuVisible;
+      this.changeDetector.detectChanges();
+    });
+  }
+
+  handleVisibilityAdminMenu() {
+    this.appService.isAdminMenuVisible.subscribe(isAdminMenuVisible => {
+      this.isAdminMenuVisible = isAdminMenuVisible;
       this.changeDetector.detectChanges();
     });
   }

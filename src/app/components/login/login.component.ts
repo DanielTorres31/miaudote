@@ -1,5 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AppService } from 'src/app/shared/app/app.service';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './shared/auth.service';
 import { Login } from './shared/login.model';
 import { Router } from '@angular/router';
@@ -11,17 +10,16 @@ import { MessageUtils } from 'src/app/utils/message-utils';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
 
   login: Login = new Login();
 
   MESSAGE_KEY = 'LOGIN_INVALID';
 
-  constructor(private router: Router, private appService: AppService, 
-      private authService: AuthService, private messageService: MessageService) { }
+  constructor(private router: Router, private authService: AuthService, 
+        private messageService: MessageService) { }
 
   ngOnInit() {
-    this.hideMenu();
   }
 
   sendLogin() {
@@ -46,20 +44,8 @@ export class LoginComponent implements OnInit, OnDestroy {
             this.login.senha.trim() == ""
   }
 
-  ngOnDestroy() {
-    this.showMenu();
-  }
-
   clearAllMessageLogin() {
     this.messageService.clear(this.MESSAGE_KEY);
-  }
-
-  showMenu() {
-    this.appService.updateMainMenuVisibility(true);
-  }
-
-  hideMenu() {
-    this.appService.updateMainMenuVisibility(false);
   }
 
 }
