@@ -5,7 +5,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let element of list">
+        <tr *ngFor="let element of list" (click)="clickElement(element)">
             <td *ngFor="let header of headers">{{ element[header.value] }}</td>
         </tr>
     </tbody>
