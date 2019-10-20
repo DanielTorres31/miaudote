@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { HowToAdoptComponent } from './components/how-to-adopt/how-to-adopt.component';
-import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
+import { AnimalDetailComponent } from './components/animal/animal-detail/animal-detail.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeAdminComponent } from './components/home-admin/home-admin.component';
 import { NormalPageGuard } from './guard/normal-page.guard';

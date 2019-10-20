@@ -1,4 +1,4 @@
-import { AnimalsViewModule } from './../animals-view/animals-view.module';
+import { AnimalsViewModule } from '../animal/animals-view/animals-view.module';
 import { SideFilterModule } from './../side-filter/side-filter.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

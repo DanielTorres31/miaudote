@@ -1,4 +1,4 @@
-import { AnimalService } from '../animal/shared/animal.service';
+import { AnimalService } from '../shared/animal.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimalCardComponent } from './animal-card.component';
