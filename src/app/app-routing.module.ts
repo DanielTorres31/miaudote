@@ -1,3 +1,5 @@
+import { InstitutionListComponent } from './components/institution/institution-list/institution-list.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,6 +12,7 @@ import { HomeAdminComponent } from './components/home-admin/home-admin.component
 import { NormalPageGuard } from './guard/normal-page.guard';
 import { LoginPageGuard } from './guard/login-page.guard';
 import { AdminPageGuard } from './guard/admin-page.guard';
+import { AnimalListComponent } from './components/animal/animal-list/animal-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [NormalPageGuard] },
@@ -17,7 +20,15 @@ const routes: Routes = [
   { path: 'comoadotar', component: HowToAdoptComponent, canActivate: [NormalPageGuard] },
   { path: 'detalhes/:id', component: AnimalDetailComponent, canActivate: [NormalPageGuard] },
   { path: 'login', component: LoginComponent, canActivate: [LoginPageGuard] },
-  { path: 'admin', component: HomeAdminComponent, canActivate: [AdminPageGuard] }
+
+  { path: 'admin', component: HomeAdminComponent, canActivate: [AdminPageGuard] },
+
+  { path: 'animal', component: AnimalListComponent, canActivate: [AdminPageGuard] },
+
+  { path: 'usuario', component: UserListComponent, canActivate: [AdminPageGuard] },
+
+  { path: 'instituicao', component: InstitutionListComponent, canActivate: [AdminPageGuard] },
+  
 ];
 
 @NgModule({

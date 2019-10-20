@@ -21,6 +21,9 @@ import { AdminMenuModule } from './components/admin-menu/admin-menu.module';
 import { AdminPageGuard } from './guard/admin-page.guard';
 import { NormalPageGuard } from './guard/normal-page.guard';
 import { LoginPageGuard } from './guard/login-page.guard';
+import { AnimalListModule } from './components/animal/animal-list/animal-list.module';
+import { InstitutionListModule } from './components/institution/institution-list/institution-list.module';
+import { UserListModule } from './components/user/user-list/user-list.module';
 
 @NgModule({
   declarations: [
@@ -41,8 +44,11 @@ import { LoginPageGuard } from './guard/login-page.guard';
     HowToAdoptModule,
     AnimalDetailModule,
     LoginModule,
-    AdminMenuModule,
     HomeAdminModule,
+    AdminMenuModule,
+    AnimalListModule,
+    UserListModule,
+    InstitutionListModule
   ],
   providers: [
     AppService,
