@@ -17,7 +17,7 @@ export class AnimalDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(param => {
 
-      this.animalService.buscarPorId(param['id'], true).subscribe((response: any) => {
+      this.animalService.findById(param['id'], true).subscribe((response: any) => {
         this.animal = response.data;
       });
 

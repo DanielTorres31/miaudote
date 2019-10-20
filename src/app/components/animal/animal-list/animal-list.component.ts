@@ -23,7 +23,7 @@ export class AnimalListComponent implements OnInit {
   constructor(private animalService: AnimalService) { }
 
   ngOnInit() {
-    this.animalService.buscarTodos().subscribe((response: any) => {
+    this.animalService.findAll().subscribe((response: any) => {
       this.animals = response.data;
     });
   }
