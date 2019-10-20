@@ -17,6 +17,10 @@ import { LoginModule } from './components/login/login.module';
 import { AppService } from './shared/app/app.service';
 import { HomeAdminModule } from './components/home-admin/home-admin.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { AdminMenuModule } from './components/admin-menu/admin-menu.module';
+import { AdminPageGuard } from './guard/admin-page.guard';
+import { NormalPageGuard } from './guard/normal-page.guard';
+import { LoginPageGuard } from './guard/login-page.guard';
 
 @NgModule({
   declarations: [
@@ -37,10 +41,14 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     HowToAdoptModule,
     AnimalDetailModule,
     LoginModule,
+    AdminMenuModule,
     HomeAdminModule,
   ],
   providers: [
     AppService,
+    NormalPageGuard,
+    AdminPageGuard,
+    LoginPageGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent]
