@@ -5,7 +5,7 @@
     </div>
 
     <ul class="nav flex-column" *ngFor="let item of items">
-        <li class="nav-item">
+        <li class="nav-item" (click)="navigate(item.route)">
             <div class="d-flex align-items-center container-item">
                 <i [class]="item.icon" aria-hidden="true"></i>
                 <a class="nav-link">{{ item.label }}</a>
