@@ -1,3 +1,4 @@
+import { MessageService } from 'primeng/api';
 import { AnimalsViewModule } from './components/animal/animals-view/animals-view.module';
 import { AnimalCardModule } from './components/animal/animal-card/animal-card.module';
 import { HomeModule } from './components/home/home.module';
@@ -24,6 +25,8 @@ import { LoginPageGuard } from './guard/login-page.guard';
 import { AnimalListModule } from './components/animal/animal-list/animal-list.module';
 import { InstitutionListModule } from './components/institution/institution-list/institution-list.module';
 import { UserListModule } from './components/user/user-list/user-list.module';
+import { InstitutionFormModule } from './components/institution/institution-form/institution-form.module';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { UserListModule } from './components/user/user-list/user-list.module';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastModule,
     TopMenuModule,
     HomeModule,
     CarouselInitialModule,
@@ -48,10 +52,12 @@ import { UserListModule } from './components/user/user-list/user-list.module';
     AdminMenuModule,
     AnimalListModule,
     UserListModule,
-    InstitutionListModule
+    InstitutionListModule,
+    InstitutionFormModule,
   ],
   providers: [
     AppService,
+    MessageService,
     NormalPageGuard,
     AdminPageGuard,
     LoginPageGuard,
