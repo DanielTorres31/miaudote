@@ -13,6 +13,7 @@ import { NormalPageGuard } from './guard/normal-page.guard';
 import { LoginPageGuard } from './guard/login-page.guard';
 import { AdminPageGuard } from './guard/admin-page.guard';
 import { AnimalListComponent } from './components/animal/animal-list/animal-list.component';
+import { InstitutionFormComponent } from './components/institution/institution-form/institution-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [NormalPageGuard] },
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'usuario', component: UserListComponent, canActivate: [AdminPageGuard] },
 
   { path: 'instituicao', component: InstitutionListComponent, canActivate: [AdminPageGuard] },
+  { path: 'instituicao/nova', component: InstitutionFormComponent, canActivate: [AdminPageGuard] },
+  { path: 'instituicao/:id', component: InstitutionFormComponent, canActivate: [AdminPageGuard] },
   
 ];
 
