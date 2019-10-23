@@ -18,7 +18,7 @@ export class TableComponent implements OnInit {
   ngOnInit() { }
 
   clickElement(element) {
-    this.clickedElement.emit(element);
+    this.clickedElement.emit({ element: element });
   }
 
 }
