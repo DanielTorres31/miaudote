@@ -1,30 +1,53 @@
 <div class="container">
     <p-card>
         <div class="ui-g">
-            <div class="ui-g-12 ui-md-3">
+            <div class="ui-g-12 ui-md-5 ui-lg-3">
                 <div class="card animals-card">
                     <img [src]="animal.BIN_FOTO" class="image-card"/>  
                 </div>
             </div>
-            <div class="ui-g-12 ui-md-9 ui-g-nopad">
+            <div class="ui-g-12 ui-md-7 ui-lg-9 ui-g-nopad">
                 <div class="ui-g-12">
                     <h3>Dados do bichinho</h3>
                 </div>
                 <div class="ui-g-12 ui-g-nopad">
-                    <div class="ui-g">
-                        <div class="ui-g-12 ui-md-3">Nome: {{ animal.NOM_ANIMAL }}</div>
-                        <div class="ui-g-12 ui-md-9">Observação: {{ animal.DES_OBSERVACAO }}</div>
-                    </div>
-                    
-                    <div class="ui-g">
-                        <div class="ui-g-6 ui-md-3">Ind. Porte: {{ animal.IND_PORTE_ANIMAL }}</div>
-                        <div class="ui-g-6 ui-md-3">Ind. Sexo: {{ animal.IND_SEXO_ANIMAL }}</div>  
-                        <div class="ui-g-6 ui-md-3">Castrado: {{ animal.IND_CASTRADO }}</div> 
-                        <div class="ui-g-6 ui-md-3">Ind. Idade: {{ animal.IND_IDADE }}</div>    
-                        <div class="ui-g-6 ui-md-3">Vacinas: {{ animal.DES_VACINA }}</div>  
-                        <div class="ui-g-6 ui-md-3">Instituição: {{ animal.NOM_INSTITUICAO }}</div>   
-                        <div class="ui-g-6 ui-md-3">Espécie: {{ animal.DES_ESPECIE }}</div>       
-                    </div>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                            <th scope="col">NOME</th>
+                            <th scope="col">SEXO</th>
+                            <th scope="col">ESPÉCIE</th>
+                            <th scope="col">IDADE</th>
+                            <th scope="col">INSTITUIÇÃO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{ animal.NOM_ANIMAL }}</th>
+                                    <td>{{ animal.IND_SEXO_ANIMAL }}</td>
+                                    <td>{{ animal.DES_ESPECIE }}</td>
+                                    <td>{{ animal.IND_IDADE }}</td>
+                                <th scope="row">{{ animal.NOM_INSTITUICAO }}</th>
+                            
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                            <th scope="col">PORTE</th>
+                            <th scope="col">CASTRADO</th>
+                            <th scope="col">VACINA</th>
+                            <th scope="col">OBSERVAÇÃO</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>                            
+                                <td>{{ animal.IND_PORTE_ANIMAL }}</td>
+                                <td>{{ animal.IND_CASTRADO }}</td>
+                                <td>{{ animal.DES_VACINA }}</td>
+                                <td>{{ animal.DES_OBSERVACAO }}</td>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>                      
