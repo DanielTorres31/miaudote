@@ -1,21 +1,32 @@
-<span>Nome: {{ animal.NOM_ANIMAL }}</span>
-<br>
-<span>Ind. Idade: {{ animal.IND_IDADE }}</span>
-<br>
-<span>Ind. Porte: {{ animal.IND_PORTE_ANIMAL }}</span>
-<br>
-<span>Ind. Sexo: {{ animal.IND_SEXO_ANIMAL }}</span>
-<br>
-<span>Castrado: {{ animal.IND_CASTRADO }}</span>
-<br>
-<span>Observação: {{ animal.DES_OBSERVACAO }}</span>
-<br>
-<span>Vacinas: {{ animal.DES_VACINA }}</span>
-<br>
-<span>Temperamento: {{ animal.DES_TEMPERAMENTO }}</span>
-<br>
-<span>Instituição: {{ animal.NOM_INSTITUICAO }}</span>
-<br>
-<span>Espécie: {{ animal.DES_ESPECIE }}</span>
-<br>
-<img [src]="animal.BIN_FOTO" />
+<div class="container">
+    <p-card>
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-3">
+                <div class="card animals-card">
+                    <img [src]="animal.BIN_FOTO" class="image-card"/>  
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-g-nopad">
+                <div class="ui-g-12">
+                    <h3>Dados do bichinho</h3>
+                </div>
+                <div class="ui-g-12 ui-g-nopad">
+                    <div class="ui-g">
+                        <div class="ui-g-12 ui-md-3">Nome: {{ animal.NOM_ANIMAL }}</div>
+                        <div class="ui-g-12 ui-md-9">Observação: {{ animal.DES_OBSERVACAO }}</div>
+                    </div>
+                    
+                    <div class="ui-g">
+                        <div class="ui-g-6 ui-md-3">Ind. Porte: {{ animal.IND_PORTE_ANIMAL }}</div>
+                        <div class="ui-g-6 ui-md-3">Ind. Sexo: {{ animal.IND_SEXO_ANIMAL }}</div>  
+                        <div class="ui-g-6 ui-md-3">Castrado: {{ animal.IND_CASTRADO }}</div> 
+                        <div class="ui-g-6 ui-md-3">Ind. Idade: {{ animal.IND_IDADE }}</div>    
+                        <div class="ui-g-6 ui-md-3">Vacinas: {{ animal.DES_VACINA }}</div>  
+                        <div class="ui-g-6 ui-md-3">Instituição: {{ animal.NOM_INSTITUICAO }}</div>   
+                        <div class="ui-g-6 ui-md-3">Espécie: {{ animal.DES_ESPECIE }}</div>       
+                    </div>
+                </div>
+            </div>
+        </div>                      
+    </p-card>
+</div>
