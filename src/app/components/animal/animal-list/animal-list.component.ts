@@ -12,7 +12,7 @@ export class AnimalListComponent implements OnInit {
 
   title = 'Animais';
 
-  animals: Animal[];
+  animals: Animal[] = new Array<Animal>();
 
   headers: Header[] = [
     { label: 'Nome', value: 'NOM_ANIMAL' },

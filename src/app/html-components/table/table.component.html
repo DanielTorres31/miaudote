@@ -5,8 +5,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let element of list" (click)="clickElement(element)">
+        <tr *ngFor="let element of paginatedList" (click)="clickElement(element)">
             <td *ngFor="let header of headers">{{ element[header.value] }}</td>
         </tr>
     </tbody>
 </table>
+<pagination [totalItems]="list.length" [itemsPerPage]="itemsPerPage" 
+    [previousText]="previousText" [nextText]="nextText" (pageChanged)="pageChanged($event)"></pagination>

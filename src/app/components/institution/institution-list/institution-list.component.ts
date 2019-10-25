@@ -14,7 +14,7 @@ export class InstitutionListComponent implements OnInit {
 
   title = 'Instituições';
 
-  institutions: Institution[];
+  institutions: Institution[] = new Array<Institution>();
 
   headers: Header[] = [
     { label: 'Nome', value: 'NOM_INSTITUICAO' },
