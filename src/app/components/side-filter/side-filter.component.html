@@ -17,7 +17,7 @@
 
             <label for="divEspecie">Espécie:</label>
             <div id="divEspecie">
-                <app-radio-button *ngFor="let especie of especieOptions; let i = index" [label]="especie.label"
+                <app-radio-button *ngFor="let especie of especieOptions; let i = index" [element]="especie"
                     [name]="'especie'" [id]="'especie' + (i + 1)" (valueChanged)="especieChanged($event)" ></app-radio-button>
             </div>
 
@@ -25,7 +25,7 @@
 
             <label for="divPorte">Porte:</label>
             <div id="divPorte">
-                <app-radio-button *ngFor="let porte of porteOptions; let i = index;" [label]="porte.label"
+                <app-radio-button *ngFor="let porte of porteOptions; let i = index;" [element]="porte"
                     [name]="'porte'" [id]="'porte' + (i + 1)" (valueChanged)="porteChanged($event)" ></app-radio-button>
             </div>
 
@@ -33,7 +33,7 @@
 
             <label for="divSexo">Sexo:</label>
             <div id="divSexo">
-                <app-radio-button *ngFor="let sexo of sexoOptions; let i = index" [label]="sexo.label" [name]="'sexo'"
+                <app-radio-button *ngFor="let sexo of sexoOptions; let i = index" [element]="sexo" [name]="'sexo'"
                     [id]="'sexo' + (i + 1)" (valueChanged)="sexoChanged($event)" ></app-radio-button>
             </div>
 
@@ -43,7 +43,7 @@
             <div id="divIdade">
                 <select class="custom-select" (click)="idadeChanged($event.target.value)">
                     <option selected>Escolha a idade</option>
-                    <option *ngFor="let idade of idadeOptions" value="1">{{ idade.label }}</option>
+                    <option *ngFor="let idade of idadeOptions" [value]="idade.value">{{ idade.label }}</option>
                 </select>
             </div>
 

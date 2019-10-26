@@ -8,6 +8,11 @@ export class InstitutionUtils {
     public static IND_TYPE_PROTETOR = 'P';
     public static TYPE_PROTETOR = 'Protetor';
 
+    public static institutionTypes = [
+        { label: 'ONG', value: 'O'},
+        { label: 'Protetor', value: 'P'},
+      ]
+
     public static getInstitutionType(indType) {
 
         switch(indType) {

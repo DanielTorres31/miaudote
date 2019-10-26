@@ -62,3 +62,39 @@ button:focus {
 .width-100 {
     width: 100% !important;
 }
+
+a {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+a:focus {
+    border-color: gray !important;
+}
+
+li {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+li:focus {
+    border-color: gray !important;
+}
+
+.page-link {
+    color: black;
+}
+
+.page-link:hover {
+    color: black;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}

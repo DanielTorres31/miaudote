@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -10,7 +11,16 @@ export class AuthService {
 
     urlService = `${environment.urlApi}/Auth.php`
 
-    public constructor(private http: HttpClient) {}
+    public constructor(private http: HttpClient, private cookieService: CookieService) {}
+
+    isUserLogged() {
+        const sessionId = this.getSessionId();
+        return sessionId ? true : false;
+    }
+
+    getSessionId() {
+        return this.cookieService.get('PHPSESSID');
+    }
 
     login(user: Login) {
         return this.http.post(`${this.urlService}`, user, {

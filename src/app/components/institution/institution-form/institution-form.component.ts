@@ -13,21 +13,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class InstitutionFormComponent implements OnInit {
 
-  title = "Nova Instituição"
+  title: string = '';
 
   institution: Institution = new Institution();
+
+  institutionTypes = InstitutionUtils.institutionTypes;
 
   constructor(private router: Router, private route: ActivatedRoute, private institutionService: InstitutionService,
     private messageService: MessageService) { }
 
   ngOnInit() {
-    this.route.params.subscribe(param => {
-      if (param['id']) {
-        this.institutionService.findById(param['id']).subscribe((response: any) => {
-          this.institution = response.data;
-        });
-      }
-    });
+    this.validatesFormIsEditable();
   }
 
   saveInstitution() {
@@ -41,6 +37,19 @@ export class InstitutionFormComponent implements OnInit {
     } else {
       this.updateInstitution(this.institution);
     }
+  }
+
+  validatesFormIsEditable() {
+    this.route.params.subscribe(param => {
+      if (param['id']) {
+        this.titleEditInstitution();
+        this.institutionService.findById(param['id']).subscribe((response: any) => {
+          this.institution = response.data;
+        });
+      } else {
+        this.titleNewInstitution();
+      }
+    });
   }
 
   createNewInstitution(institution: Institution) {
@@ -89,6 +98,14 @@ export class InstitutionFormComponent implements OnInit {
 
   closeForm() {
     this.router.navigate(['instituicao']);
+  }
+
+  titleNewInstitution() {
+    this.title = 'Nova Instituição';
+  }
+
+  titleEditInstitution() {
+    this.title = 'Edição Instituição';
   }
 
 }

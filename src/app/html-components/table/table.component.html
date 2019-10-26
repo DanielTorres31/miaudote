@@ -10,5 +10,7 @@
         </tr>
     </tbody>
 </table>
-<pagination [totalItems]="list.length" [itemsPerPage]="itemsPerPage" 
-    [previousText]="previousText" [nextText]="nextText" (pageChanged)="pageChanged($event)"></pagination>
+<div class="d-flex justify-content-end">
+    <pagination [totalItems]="list.length" [itemsPerPage]="itemsPerPage" 
+        [previousText]="previousText" [nextText]="nextText" (pageChanged)="pageChanged($event)"></pagination>
+</div>

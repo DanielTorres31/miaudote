@@ -1,3 +1,4 @@
+import { AnimalUtils } from './../animal/shared/animal-utils';
 import { Component, OnInit } from '@angular/core';
 import { isMobile } from '../../utils/screen-utils';
 import { SideFilter } from './shared/side-filter.model';
@@ -15,28 +16,20 @@ export class SideFilterComponent implements OnInit {
 
   especieOptions = [
     {label: 'Todos', value: 'Todos'},
-    {label: 'Cão', value: 'Cão'},
-    {label: 'Gato', value: 'Gato'},
+    ...AnimalUtils.especie
   ]
 
   porteOptions = [
     {label: 'Todos', value: 'Todos'},
-    {label: 'Pequeno', value: 'Pequeno'},
-    {label: 'Médio', value: 'Médio'},
-    {label: 'Grande', value: 'Grande'},
+    ...AnimalUtils.porte
   ]
 
   sexoOptions = [
     {label: 'Todos', value: 'Todos'},
-    {label: 'Macho', value: 'Macho'},
-    {label: 'Fêmea', value: 'Fêmea'},
+    ...AnimalUtils.sexo
   ]
 
-  idadeOptions = [
-    {label: 'Até 1 ano (Filhote)', value: 'Até 1 ano (Filhote)'},
-    {label: '1 a 8 anos (Adulto)', value: '1 a 8 anos (Adulto)'},
-    {label: 'Acima de 8 anos (Idoso)', value: 'Acima de 8 anos (Idoso)'},
-  ]
+  idadeOptions = AnimalUtils.idade;
 
   filter: SideFilter = new SideFilter();
 
