@@ -14,6 +14,7 @@ import { LoginPageGuard } from './guard/login-page.guard';
 import { AdminPageGuard } from './guard/admin-page.guard';
 import { AnimalListComponent } from './components/animal/animal-list/animal-list.component';
 import { InstitutionFormComponent } from './components/institution/institution-form/institution-form.component';
+import { AnimalFormComponent } from './components/animal/animal-form/animal-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [NormalPageGuard] },
@@ -25,13 +26,15 @@ const routes: Routes = [
   { path: 'admin', component: HomeAdminComponent, canActivate: [AdminPageGuard] },
 
   { path: 'animal', component: AnimalListComponent, canActivate: [AdminPageGuard] },
-
-  { path: 'usuario', component: UserListComponent, canActivate: [AdminPageGuard] },
+  { path: 'animal/novo', component: AnimalFormComponent, canActivate: [AdminPageGuard] },
+  { path: 'animal/:id', component: AnimalFormComponent, canActivate: [AdminPageGuard] },
 
   { path: 'instituicao', component: InstitutionListComponent, canActivate: [AdminPageGuard] },
   { path: 'instituicao/nova', component: InstitutionFormComponent, canActivate: [AdminPageGuard] },
   { path: 'instituicao/:id', component: InstitutionFormComponent, canActivate: [AdminPageGuard] },
   
+  { path: 'usuario', component: UserListComponent, canActivate: [AdminPageGuard] },
+
 ];
 
 @NgModule({
