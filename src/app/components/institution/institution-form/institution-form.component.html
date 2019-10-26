@@ -21,8 +21,7 @@
                 <label for="type">Tipo Instituição*:</label>
                 <select class="custom-select" [(ngModel)]="institution.IND_TIPO_INSTITUICAO">
                     <option selected>Selecione o tipo</option>
-                    <option value="O">ONG</option>
-                    <option value="P">Protetor</option>
+                    <option *ngFor="let institutionType of institutionTypes" [value]="institutionType.value">{{ institutionType.label }}</option>
                 </select>
             </div>
         </div>

@@ -17,6 +17,8 @@ export class InstitutionFormComponent implements OnInit {
 
   institution: Institution = new Institution();
 
+  institutionTypes = InstitutionUtils.institutionTypes;
+
   constructor(private router: Router, private route: ActivatedRoute, private institutionService: InstitutionService,
     private messageService: MessageService) { }
 
