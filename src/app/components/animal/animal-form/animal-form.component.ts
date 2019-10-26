@@ -11,11 +11,15 @@ import { Animal } from '../shared/animal.model';
 })
 export class AnimalFormComponent implements OnInit {
 
-  title: string = ''
+  title: string = '';
 
   animal: Animal = new Animal();
 
   especies = AnimalUtils.especie;
+  idades = AnimalUtils.idade;
+  portes = AnimalUtils.porte;
+  sexos = AnimalUtils.sexo;
+  castradoOptions = AnimalUtils.castrado;
 
   constructor(private router: Router, private route: ActivatedRoute, private animalService: AnimalService) { }
 

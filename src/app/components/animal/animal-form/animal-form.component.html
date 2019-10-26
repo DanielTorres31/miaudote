@@ -10,24 +10,36 @@
                 <input id="name" type="text" class="form-control" [(ngModel)]="animal.NOM_ANIMAL">
             </div>
             <div class="ui-g-6 ui-md-6 ui-lg-6">
-                <label for="email">Espécie*:</label>
-                <select class="custom-select" [(ngModel)]="animal.ESPECIE_COD_ESPECIE">
-                    <option selected>Selecione a espécie</option>
+                <label for="especie">Espécie*:</label>
+                <select id="especie" class="custom-select" [(ngModel)]="animal.ESPECIE_COD_ESPECIE">
                     <option *ngFor="let especie of especies" [value]="especie.value">{{ especie.label }}</option>
                 </select>
             </div>
-            <!-- <div class="ui-g-6 ui-md-6 ui-lg-6">
-                <label for="phone">Telefone*:</label>
-                <input id="phone" type="text" class="form-control" [(ngModel)]="">
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="idade">Idade*:</label>
+                <select id="idade" class="custom-select" [(ngModel)]="animal.IND_IDADE">
+                    <option *ngFor="let idade of idades" [value]="idade.value">{{ idade.label }}</option>
+                </select>
             </div>
             <div class="ui-g-6 ui-md-6 ui-lg-6">
-                <label for="type">Tipo Instituição*:</label>
-                <select class="custom-select" [(ngModel)]="">
-                    <option selected>Selecione o tipo</option>
-                    <option value="O">ONG</option>
-                    <option value="P">Protetor</option>
+                <label for="porte">Porte*:</label>
+                <select id="porte" class="custom-select" [(ngModel)]="animal.IND_PORTE_ANIMAL">
+                    <option *ngFor="let porte of portes" [value]="porte.value">{{ porte.label }}</option>
                 </select>
-            </div> -->
+            </div>
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="sexo">Sexo*:</label>
+                <select id="sexo" class="custom-select" [(ngModel)]="animal.IND_SEXO_ANIMAL">
+                    <option *ngFor="let sexo of sexos" [value]="sexo.value">{{ sexo.label }}</option>
+                </select>
+            </div>
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="castrado">Castrado*:</label>
+                <select id="castrado" class="custom-select" [(ngModel)]="animal.IND_CASTRADO">
+                    <option *ngFor="let castrado of castradoOptions" [value]="castrado.value">{{ castrado.label }}
+                    </option>
+                </select>
+            </div>
         </div>
         <div class="grid">
             <button type="button" class="btn btn-dark" (click)="saveAnimal()">Salvar</button>
