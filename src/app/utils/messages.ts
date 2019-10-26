@@ -16,10 +16,6 @@ export class Messages {
     public static INSTITUICAO_ALTERACAO_ERRO = 'Erro ao alterar instituição.';
     public static INSTITUICAO_EXCLUSAO_SUCESSO = 'Instituição excluída com sucesso!';
     public static INSTITUICAO_EXCLUSAO_ERRO = 'Erro ao excluir instituição.';
-    public static INSTITUICAO_VALIDACAO_TIPO = 'Selecione o tipo da instituição.';
-    public static INSTITUICAO_VALIDACAO_EMAIL = 'Preencha o e-mail da instituição.';
-    public static INSTITUICAO_VALIDACAO_NOME = 'Preencha o nome da instituição.';
-    public static INSTITUICAO_VALIDACAO_TELEFONE = 'Preencha o telefone da instituição.';
 
     public static USUARIO_CADASTRO_SUCESSO = 'Usuário criado com sucesso!';
     public static USUARIO_CADASTRO_ERRO = 'Erro ao criar usuário.';
