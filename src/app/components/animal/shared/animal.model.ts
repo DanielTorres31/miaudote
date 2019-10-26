@@ -3,10 +3,10 @@ export class Animal {
     public constructor(
         public COD_ANIMAL?: Number,
         public NOM_ANIMAL?: string,
-        public IND_IDADE?: Number,
-        public IND_PORTE_ANIMAL?: Number,
+        public IND_IDADE?: string,
+        public IND_PORTE_ANIMAL?: string,
         public IND_SEXO_ANIMAL?: string,
-        public IND_CASTRADO?: boolean,
+        public IND_CASTRADO?: string,
         public IND_ADOTADO?: boolean,
         public DAT_CADASTRO?: Date,
         public DAT_ADOCAO?: Date,
