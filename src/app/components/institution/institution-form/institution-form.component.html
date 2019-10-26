@@ -2,7 +2,7 @@
     <div class="card">
         <h3>{{ title }}</h3>
         <div class="grid">
-            <button type="button" class="btn btn-dark" (click)="deleteInstitution()">Excluir</button>
+            <button *ngIf="institution.COD_INSTITUICAO" type="button" class="btn btn-dark" (click)="deleteInstitution()">Excluir</button>
         </div>
         <div class="grid">
             <div class="ui-g-6 ui-md-6 ui-lg-6">
