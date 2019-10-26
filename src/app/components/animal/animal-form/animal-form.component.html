@@ -1,0 +1,38 @@
+<div class="ui-g-10 ui-md-10 ui-lg-10">
+    <div class="card">
+        <h3>{{ title }}</h3>
+        <div class="grid">
+            <button type="button" class="btn btn-dark" (click)="deleteAnimal()">Excluir</button>
+        </div>
+        <div class="grid">
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="name">Nome*:</label>
+                <input id="name" type="text" class="form-control" [(ngModel)]="animal.NOM_ANIMAL">
+            </div>
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="email">Espécie*:</label>
+                <select class="custom-select" [(ngModel)]="animal.ESPECIE_COD_ESPECIE">
+                    <option selected>Selecione a espécie</option>
+                    <option value="O">ONG</option>
+                    <option value="P">Protetor</option>
+                </select>
+            </div>
+            <!-- <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="phone">Telefone*:</label>
+                <input id="phone" type="text" class="form-control" [(ngModel)]="">
+            </div>
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="type">Tipo Instituição*:</label>
+                <select class="custom-select" [(ngModel)]="">
+                    <option selected>Selecione o tipo</option>
+                    <option value="O">ONG</option>
+                    <option value="P">Protetor</option>
+                </select>
+            </div> -->
+        </div>
+        <div class="grid">
+            <button type="button" class="btn btn-dark" (click)="saveAnimal()">Salvar</button>
+            <button type="button" class="btn btn-dark" (click)="closeForm()">Cancelar</button>
+        </div>
+    </div>
+</div>
