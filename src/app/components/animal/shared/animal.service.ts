@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
+import { Animal } from './animal.model';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,18 @@ export class AnimalService {
         retornarImagem: retornarImagem ? 'T' : 'F'
       }
     });
+  }
+
+  create(animal: Animal) {
+    return this.httpClient.post(this.urlService, animal);
+  }
+
+  update(animal: Animal) {
+    return this.httpClient.put(this.urlService, animal);
+  }
+
+  delete(id: Number) {
+    return this.httpClient.delete(`${this.urlService}/${id}`);
   }
 
 }
