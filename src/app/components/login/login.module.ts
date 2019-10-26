@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -16,6 +17,6 @@ import { MessageModule } from 'primeng/message';
     MessageModule
   ],
   exports: [LoginComponent],
-  providers: [AuthService, MessageService]
+  providers: [AuthService, MessageService, CookieService]
 })
 export class LoginModule { }
