@@ -2,7 +2,8 @@
     <div class="card">
         <h3>{{ title }}</h3>
         <div class="grid">
-            <button *ngIf="animal.COD_ANIMAL" type="button" class="btn btn-dark" (click)="deleteAnimal()">Excluir</button>
+            <button *ngIf="animal.COD_ANIMAL" type="button" class="btn btn-dark"
+                (click)="deleteAnimal()">Excluir</button>
         </div>
         <div class="grid">
             <div class="ui-g-6 ui-md-6 ui-lg-6">
@@ -39,6 +40,15 @@
                     <option *ngFor="let castrado of castradoOptions" [value]="castrado.value">{{ castrado.label }}
                     </option>
                 </select>
+            </div>
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+                <label for="instituicao">Instituição*:</label>
+                <select id="instituicao" class="custom-select" [(ngModel)]="animal.INSTITUICAO_COD_INSTITUICAO">
+                    <option *ngFor="let institution of institutions" [value]="institution.COD_INSTITUICAO">{{ institution.NOM_INSTITUICAO }}</option>
+                </select>
+            </div>
+            <div class="ui-g-6 ui-md-6 ui-lg-6">
+
             </div>
         </div>
         <div class="grid">

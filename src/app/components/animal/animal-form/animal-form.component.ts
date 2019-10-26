@@ -1,8 +1,10 @@
+import { InstitutionService } from './../../institution/shared/institution.service';
 import { AnimalUtils } from './../shared/animal-utils';
 import { AnimalService } from 'src/app/components/animal/shared/animal.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Animal } from '../shared/animal.model';
+import { Institution } from '../../institution/shared/institution.model';
 
 @Component({
   selector: 'app-animal-form',
@@ -21,10 +23,14 @@ export class AnimalFormComponent implements OnInit {
   sexos = AnimalUtils.sexo;
   castradoOptions = AnimalUtils.castrado;
 
-  constructor(private router: Router, private route: ActivatedRoute, private animalService: AnimalService) { }
+  institutions: Institution[] = new Array<Institution>();
+
+  constructor(private router: Router, private route: ActivatedRoute, 
+    private animalService: AnimalService, private institutionService: InstitutionService) { }
 
   ngOnInit() {
     this.validatesFormIsEditable();
+    this.loadInstitutionOptions();
   }
 
   validatesFormIsEditable() {
@@ -41,11 +47,17 @@ export class AnimalFormComponent implements OnInit {
   }
 
   saveAnimal() {
-
+    console.log(this.animal);
   }
 
   deleteAnimal() {
 
+  }
+
+  loadInstitutionOptions() {
+    this.institutionService.findAll().subscribe((response: any) => {
+      this.institutions = response.data;
+    });
   }
 
   closeForm() {
