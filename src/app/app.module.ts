@@ -1,3 +1,4 @@
+import { AuthenticatedGuard } from './guard/authenticated.guard';
 import { MessageService } from 'primeng/api';
 import { AnimalsViewModule } from './components/animal/animals-view/animals-view.module';
 import { AnimalCardModule } from './components/animal/animal-card/animal-card.module';
@@ -61,6 +62,7 @@ import { ToastModule } from 'primeng/toast';
     NormalPageGuard,
     AdminPageGuard,
     LoginPageGuard,
+    AuthenticatedGuard,
     { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent]
