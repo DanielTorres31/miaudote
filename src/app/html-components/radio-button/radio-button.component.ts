@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class RadioButtonComponent implements OnInit {
 
-  @Input() label: string;
+  @Input() element: any;
   @Input() name: string;
   @Input() id: string;
 
@@ -25,7 +25,7 @@ export class RadioButtonComponent implements OnInit {
   }
 
   emitValueChange() {
-    this.valueChanged.emit({ value: this.label });
+    this.valueChanged.emit({ value: this.element.value });
   }
 
 }
