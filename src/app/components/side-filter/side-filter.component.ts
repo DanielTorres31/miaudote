@@ -1,4 +1,4 @@
-import { Constants } from './../../utils/constants';
+import { AnimalUtils } from './../animal/shared/animal-utils';
 import { Component, OnInit } from '@angular/core';
 import { isMobile } from '../../utils/screen-utils';
 import { SideFilter } from './shared/side-filter.model';
@@ -16,20 +16,20 @@ export class SideFilterComponent implements OnInit {
 
   especieOptions = [
     {label: 'Todos', value: 'Todos'},
-    ...Constants.especie
+    ...AnimalUtils.especie
   ]
 
   porteOptions = [
     {label: 'Todos', value: 'Todos'},
-    ...Constants.porte
+    ...AnimalUtils.porte
   ]
 
   sexoOptions = [
     {label: 'Todos', value: 'Todos'},
-    ...Constants.sexo
+    ...AnimalUtils.sexo
   ]
 
-  idadeOptions = Constants.idade;
+  idadeOptions = AnimalUtils.idade;
 
   filter: SideFilter = new SideFilter();
 
