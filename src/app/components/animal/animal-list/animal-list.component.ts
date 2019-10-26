@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AnimalService } from './../shared/animal.service';
 import { Header } from './../../../html-components/table/shared/header.model';
 import { Component, OnInit } from '@angular/core';
@@ -20,12 +21,20 @@ export class AnimalListComponent implements OnInit {
     { label: 'Instituição', value: 'NOM_INSTITUICAO' },
   ]
 
-  constructor(private animalService: AnimalService) { }
+  constructor(private animalService: AnimalService, private router: Router) { }
 
   ngOnInit() {
     this.animalService.findAll().subscribe((response: any) => {
       this.animals = response.data;
     });
+  }
+
+  openFormNewAnimal() {
+    this.router.navigate(['animal/novo']);
+  }
+
+  openFormEditAnimal(animal: Animal) {
+    this.router.navigate(['animal', animal.COD_ANIMAL]);
   }
 
 }

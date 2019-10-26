@@ -2,8 +2,8 @@
     <div class="card">
         <h3>{{ title }}</h3>
         <div class="action-button">
-            <button type="button" class="btn btn-dark">Novo Animal</button>
+            <button type="button" class="btn btn-dark" (click)="openFormNewAnimal()">Novo Animal</button>
         </div>
-        <app-table [list]="animals" [headers]="headers"></app-table>
+        <app-table [list]="animals" [headers]="headers" (clickedElement)="openFormEditAnimal($event.element)"></app-table>
     </div>
 </div>
