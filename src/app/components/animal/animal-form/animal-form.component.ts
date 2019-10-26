@@ -1,3 +1,4 @@
+import { AnimalUtils } from './../shared/animal-utils';
 import { AnimalService } from 'src/app/components/animal/shared/animal.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -13,6 +14,8 @@ export class AnimalFormComponent implements OnInit {
   title: string = ''
 
   animal: Animal = new Animal();
+
+  especies = AnimalUtils.especie;
 
   constructor(private router: Router, private route: ActivatedRoute, private animalService: AnimalService) { }
 

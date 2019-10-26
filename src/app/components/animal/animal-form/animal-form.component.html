@@ -13,8 +13,7 @@
                 <label for="email">Espécie*:</label>
                 <select class="custom-select" [(ngModel)]="animal.ESPECIE_COD_ESPECIE">
                     <option selected>Selecione a espécie</option>
-                    <option value="O">ONG</option>
-                    <option value="P">Protetor</option>
+                    <option *ngFor="let especie of especies" [value]="especie.value">{{ especie.label }}</option>
                 </select>
             </div>
             <!-- <div class="ui-g-6 ui-md-6 ui-lg-6">
