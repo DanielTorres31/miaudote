@@ -5,6 +5,7 @@ import { Institution } from './../shared/institution.model';
 import { InstitutionService } from './../shared/institution.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Messages } from 'src/app/utils/messages';
 
 @Component({
   selector: 'app-institution-form',
@@ -54,23 +55,23 @@ export class InstitutionFormComponent implements OnInit {
 
   createNewInstitution(institution: Institution) {
     this.institutionService.create(institution).subscribe((response: any) => {
-      this.messageService.add(MessageUtils.createSuccessMessage('Instituição criada com sucesso!'));
+      this.messageService.add(MessageUtils.createSuccessMessage(Messages.INSTITUICAO_CADASTRO_SUCESSO));
       this.closeForm();
-    }, () => this.messageService.add(MessageUtils.createErrorMessage('Erro ao criar instituição.')));
+    }, () => this.messageService.add(MessageUtils.createErrorMessage(Messages.INSTITUICAO_CADASTRO_ERRO)));
   }
 
   updateInstitution(institution: Institution) {
     this.institutionService.update(institution).subscribe((response: any) => {
-      this.messageService.add(MessageUtils.createSuccessMessage('Instituição alterada com sucesso!'));
+      this.messageService.add(MessageUtils.createSuccessMessage(Messages.INSTITUICAO_ALTERACAO_SUCESSO));
       this.closeForm();
-    }, () => this.messageService.add(MessageUtils.createErrorMessage('Erro ao alterar instituição.')));
+    }, () => this.messageService.add(MessageUtils.createErrorMessage(Messages.INSTITUICAO_ALTERACAO_ERRO)));
   }
 
   deleteInstitution() {
     this.institutionService.delete(this.institution.COD_INSTITUICAO).subscribe((response: any) => {
-      this.messageService.add(MessageUtils.createSuccessMessage('Instituição excluída com sucesso!'));
+      this.messageService.add(MessageUtils.createSuccessMessage(Messages.INSTITUICAO_EXCLUSAO_SUCESSO));
       this.closeForm();
-    }, () => this.messageService.add(MessageUtils.createErrorMessage('Erro ao excluir instituição.')));
+    }, () => this.messageService.add(MessageUtils.createErrorMessage(Messages.INSTITUICAO_EXCLUSAO_ERRO)));
   }
 
   validateInstitution(institution: Institution) {
@@ -78,19 +79,19 @@ export class InstitutionFormComponent implements OnInit {
 
     if (institution.IND_TIPO_INSTITUICAO != InstitutionUtils.IND_TYPE_ONG &&
       institution.IND_TIPO_INSTITUICAO != InstitutionUtils.IND_TYPE_PROTETOR) {
-      this.messageService.add(MessageUtils.createErrorMessage('Selecione o tipo da instituição.'));
+      this.messageService.add(MessageUtils.createErrorMessage(Messages.INSTITUICAO_VALIDACAO_TIPO));
       error = true;
     }
     if (!institution.DES_EMAIL) {
-      this.messageService.add(MessageUtils.createErrorMessage('Preencha o email da instituição.'));
+      this.messageService.add(MessageUtils.createErrorMessage(Messages.INSTITUICAO_VALIDACAO_EMAIL));
       error = true;
     }
     if (!institution.NOM_INSTITUICAO) {
-      this.messageService.add(MessageUtils.createErrorMessage('Preencha o nome da instituição.'));
+      this.messageService.add(MessageUtils.createErrorMessage(Messages.INSTITUICAO_VALIDACAO_NOME));
       error = true;
     }
     if (!institution.NUM_TELEFONE) {
-      this.messageService.add(MessageUtils.createErrorMessage('Preencha o telefone da instituição.'));
+      this.messageService.add(MessageUtils.createErrorMessage(Messages.INSTITUICAO_VALIDACAO_TELEFONE));
       error = true;
     }
     return error;

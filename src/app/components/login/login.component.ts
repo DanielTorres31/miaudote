@@ -4,6 +4,7 @@ import { Login } from './shared/login.model';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { MessageUtils } from 'src/app/utils/message-utils';
+import { Messages } from 'src/app/utils/messages';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.clearAllMessageLogin();
 
     if(this.isFieldsInvalid()) {
-      this.messageService.add( MessageUtils.createErrorMessage( 'Preencha os campos Login e Senha', this.MESSAGE_KEY ) );
+      this.messageService.add( MessageUtils.createErrorMessage( Messages.LOGIN_VALIDACAO, this.MESSAGE_KEY ) );
       return;
     }
 
@@ -34,7 +35,7 @@ export class LoginComponent implements OnInit {
       if (!response.erro) {
         this.router.navigate(['admin']);
       }
-    }, () => this.messageService.add( MessageUtils.createErrorMessage( 'Usuário e/ou senha inválidos!', this.MESSAGE_KEY ) ))
+    }, () => this.messageService.add( MessageUtils.createErrorMessage( Messages.LOGIN_ERRO, this.MESSAGE_KEY ) ))
   }
 
   isFieldsInvalid() {
