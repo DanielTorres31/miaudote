@@ -18,10 +18,10 @@
                 <input id="phone" type="text" class="form-control" [(ngModel)]="institution.NUM_TELEFONE">
             </div>
             <div class="ui-g-6 ui-md-6 ui-lg-6">
-                <label for="type">Tipo Instituição*:</label>
+                <label>Tipo Instituição*:</label>
                 <select class="custom-select" [(ngModel)]="institution.IND_TIPO_INSTITUICAO">
-                    <option selected>Selecione o tipo</option>
-                    <option *ngFor="let institutionType of institutionTypes" [value]="institutionType.value">{{ institutionType.label }}</option>
+                    <option *ngFor="let institutionType of institutionTypes" [value]="institutionType.value">
+                        {{ institutionType.label }}</option>
                 </select>
             </div>
         </div>
