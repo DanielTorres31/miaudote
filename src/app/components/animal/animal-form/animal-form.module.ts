@@ -1,8 +1,8 @@
 import { FormsModule } from '@angular/forms';
-import { AnimalService } from './../shared/animal.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AnimalFormComponent } from './animal-form.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 
 
@@ -11,6 +11,7 @@ import { AnimalFormComponent } from './animal-form.component';
   imports: [
     CommonModule,
     FormsModule,
+    ImageCropperModule,
   ]
 })
 export class AnimalFormModule { }

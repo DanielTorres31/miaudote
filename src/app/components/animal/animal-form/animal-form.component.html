@@ -6,7 +6,7 @@
                 (click)="deleteAnimal()">Excluir</button>
         </div>
         <div class="grid">
-            
+
             <div class="form-row">
                 <div class="col">
                     <label for="name">Nome*:</label>
@@ -60,11 +60,35 @@
                     </select>
                 </div>
                 <div class="col">
-
+                    <label for="temperamento">Temperamento:</label>
+                    <input id="temperamento" type="text" class="form-control" [(ngModel)]="animal.DES_TEMPERAMENTO">
                 </div>
             </div>
 
+            <div class="form-row">
+                <div class="col">
+                    <label for="observacao">Observação:</label>
+                    <textarea id="observacao" class="form-control" rows="3"
+                        [(ngModel)]="animal.DES_OBSERVACAO"></textarea>
+                </div>
+                <div class="col">
+                    <label for="observacao">Vacinas:</label>
+                    <textarea id="observacao" class="form-control" rows="3" [(ngModel)]="animal.DES_VACINA"></textarea>
+                </div>
+            </div>
 
+            <div class="form-row">
+                <div class="col">
+                    <label>Foto*:</label>
+                    <input type="file" (change)="fileChangeEvent($event)" style="width: 100% !important;" />
+                </div>
+                <div class="col">
+                    <div class="image-preview">
+                        <image-cropper [imageChangedEvent]="imageChangedEvent" [aspectRatio]="3 / 4"
+                            [resizeToWidth]="400" (imageCropped)="imageCropped($event)"></image-cropper>
+                    </div>
+                </div>
+            </div>
 
         </div>
         <div class="grid">

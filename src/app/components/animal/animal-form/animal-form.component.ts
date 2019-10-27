@@ -27,9 +27,11 @@ export class AnimalFormComponent implements OnInit {
   sexos = AnimalUtils.sexo;
   castradoOptions = AnimalUtils.castrado;
 
+  imageChangedEvent: any = '';
+
   institutions: Institution[] = new Array<Institution>();
 
-  constructor(private router: Router, private route: ActivatedRoute, 
+  constructor(private router: Router, private route: ActivatedRoute,
     private animalService: AnimalService, private institutionService: InstitutionService,
     private messageService: MessageService, private apiUtils: ApiResponseUtils) { }
 
@@ -40,7 +42,7 @@ export class AnimalFormComponent implements OnInit {
 
   validatesFormIsEditable() {
     this.route.params.subscribe(param => {
-      if(param['id']) {
+      if (param['id']) {
         this.titleEditAnimal();
         this.animalService.findById(param['id']).subscribe((response: any) => {
           this.animal = response.data;
@@ -52,7 +54,7 @@ export class AnimalFormComponent implements OnInit {
   }
 
   saveAnimal() {
-    if(!this.animal.COD_ANIMAL) {
+    if (!this.animal.COD_ANIMAL) {
       this.createNewAnimal(this.animal);
     } else {
       this.updateAnimal(this.animal);
@@ -63,27 +65,31 @@ export class AnimalFormComponent implements OnInit {
     this.animalService.create(animal).subscribe((response: any) => {
       this.messageService.add(MessageUtils.createSuccessMessage(Messages.ANIMAL_CADASTRO_SUCESSO));
       this.closeForm();
-  }, (response) => this.apiUtils.validatesResponseError(response, Messages.ANIMAL_CADASTRO_ERRO) );
+    }, (response) => this.apiUtils.validatesResponseError(response, Messages.ANIMAL_CADASTRO_ERRO));
   }
 
   updateAnimal(animal: Animal) {
     this.animalService.update(animal).subscribe((response: any) => {
       this.messageService.add(MessageUtils.createSuccessMessage(Messages.ANIMAL_ALTERACAO_SUCESSO));
       this.closeForm();
-    }, (response) => this.apiUtils.validatesResponseError(response, Messages.ANIMAL_ALTERACAO_ERRO) );
+    }, (response) => this.apiUtils.validatesResponseError(response, Messages.ANIMAL_ALTERACAO_ERRO));
   }
 
   deleteAnimal() {
     this.animalService.delete(this.animal.COD_ANIMAL).subscribe((response: any) => {
-        this.messageService.add(MessageUtils.createSuccessMessage(Messages.ANIMAL_EXCLUIDO_SUCESSO));
-        this.closeForm();
-    }, (response) => this.apiUtils.validatesResponseError(response, Messages.ANIMAL_EXCLUIDO_ERRO) );
+      this.messageService.add(MessageUtils.createSuccessMessage(Messages.ANIMAL_EXCLUIDO_SUCESSO));
+      this.closeForm();
+    }, (response) => this.apiUtils.validatesResponseError(response, Messages.ANIMAL_EXCLUIDO_ERRO));
   }
 
   loadInstitutionOptions() {
     this.institutionService.findAll().subscribe((response: any) => {
       this.institutions = response.data;
     });
+  }
+
+  imageCropped(event) {
+    this.animal.BIN_FOTO = event.base64;
   }
 
   closeForm() {
@@ -96,6 +102,10 @@ export class AnimalFormComponent implements OnInit {
 
   titleEditAnimal() {
     this.title = 'Edição Animal';
+  }
+
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
   }
 
 }
