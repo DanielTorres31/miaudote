@@ -14,7 +14,7 @@ export class TableComponent implements OnInit {
 
   paginatedList: any[] = new Array<any>();
 
-  itemsPerPage = 2;
+  itemsPerPage = 6;
 
   previousText = 'Anterior';
   nextText = 'Próximo';

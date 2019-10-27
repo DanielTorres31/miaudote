@@ -46,6 +46,11 @@ export class AnimalUtils {
         { label: 'Fêmea', value: 'F' },
     ]
 
+    public static castrado = [
+        { label: 'Sim', value: 'T' },
+        { label: 'Não', value: 'F' },
+    ]
+
     public static getAnimalType(indType) {
 
         switch(indType) {

@@ -1,3 +1,4 @@
+import { ApiResponseUtils } from './utils/api-response-utils';
 import { AnimalFormModule } from './components/animal/animal-form/animal-form.module';
 import { AuthenticatedGuard } from './guard/authenticated.guard';
 import { MessageService } from 'primeng/api';
@@ -61,6 +62,7 @@ import { ToastModule } from 'primeng/toast';
   providers: [
     AppService,
     MessageService,
+    ApiResponseUtils,
     NormalPageGuard,
     AdminPageGuard,
     LoginPageGuard,
