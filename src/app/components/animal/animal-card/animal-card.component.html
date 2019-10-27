@@ -1,12 +1,14 @@
-<div class="card animals-card">
+<!-- <div class="card animals-card"> -->
+<div class="card" (click)="navigateToDetails()">
 
     <img [src]="animal.BIN_FOTO" class="image-card">
 
     <div class="card-img-overlay">
         <div class="image-content">
             <span class="animal-name">{{ animal.NOM_ANIMAL }}</span>
-            <span class="btn btn-primary card-button" (click)="navigateToDetails()">Detalhes</span>
         </div>
     </div>
-
+    
+    <!-- <button type="button" class="btn btn-primary card-button" (click)="navigateToDetails()">Detalhes</button> -->
+    
 </div>
