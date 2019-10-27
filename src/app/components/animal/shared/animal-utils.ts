@@ -6,21 +6,24 @@ export class AnimalUtils {
     public static TYPE_MASCULINO = 'Macho';
     public static IND_TYPE_SEXO_FEMININO = 'F';
     public static TYPE_FEMININO = 'Fêmea';
+    
     public static IND_TYPE_IDADE_FILHOTE = '1';
     public static TYPE_FILHOTE = 'Filhote';
     public static IND_TYPE_IDADE_ADULTO = '2';
     public static TYPE_ADULTO = 'Adulto';
     public static IND_TYPE_IDADE_IDOSO = '3';
     public static TYPE_IDOSO = 'Idoso';
+    
     public static IND_TYPE_CASTRADO_NAO = 'F';
     public static TYPE_CASTRADO_NAO = 'Não';
     public static IND_TYPE_CASTRADO_SIM = 'T';
     public static TYPE_CASTRADO_SIM = 'Sim';
-    public static IND_TYPE_PORTE_P = '1';
+    
+    public static IND_TYPE_PORTE_P = 'P';
     public static TYPE_PORTE_P = 'Pequeno';
-    public static IND_TYPE_PORTE_M = '2';
+    public static IND_TYPE_PORTE_M = 'M';
     public static TYPE_PORTE_M = 'Médio';
-    public static IND_TYPE_PORTE_G = '3';
+    public static IND_TYPE_PORTE_G = 'G';
     public static TYPE_PORTE_G = 'Grande';
 
     public static idade = [
