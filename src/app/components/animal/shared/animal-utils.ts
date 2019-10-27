@@ -51,7 +51,7 @@ export class AnimalUtils {
         { label: 'Não', value: 'F' },
     ]
 
-    public static getAnimalType(indType) {
+    public static getSexoType(indType) {
 
         switch(indType) {
             case this.IND_TYPE_SEXO_MASCULINO:
@@ -59,21 +59,48 @@ export class AnimalUtils {
             
             case this.IND_TYPE_SEXO_FEMININO:
                 return this.TYPE_FEMININO;
-            
+
+            default:
+                return '-';
+        }
+    }
+
+    public static getIdadeType(indType) {                
+         
+        switch(indType) {
+
             case this.IND_TYPE_IDADE_FILHOTE:
                 return this.TYPE_FILHOTE;
 
             case this.IND_TYPE_IDADE_ADULTO:
-                return this.TYPE_ADULTO;                
+                return this.TYPE_ADULTO; 
 
             case this.IND_TYPE_IDADE_IDOSO:
                 return this.TYPE_IDOSO;
+
+            default:
+                return '-';
+        }
+    }
+
+    public static getCastradoType(indType) {                
+         
+        switch(indType) {
 
             case this.IND_TYPE_CASTRADO_NAO:
                 return this.TYPE_CASTRADO_NAO;                
 
             case this.IND_TYPE_CASTRADO_SIM:
                 return this.TYPE_CASTRADO_SIM; 
+
+            default:
+                return '-';
+        }
+    }
+
+    public static getPorteType(indType) {                
+         
+        switch(indType) {         
 
             case this.IND_TYPE_PORTE_P:
                 return this.TYPE_PORTE_P;
@@ -89,15 +116,28 @@ export class AnimalUtils {
         }
     }
 
-    public static getIndAnimalType(type) {
 
-        switch(type) {
+    /**Começo*/
+
+    public static getIndSexoType(indType) {
+
+        switch(indType) {
+            
             case this.TYPE_MASCULINO:
                 return this.IND_TYPE_SEXO_MASCULINO;
             
             case this.TYPE_FEMININO:
                 return this.IND_TYPE_SEXO_FEMININO;
 
+            default:
+                return '-';
+        }
+    }
+
+    public static getIndIdadeType(indType) {                
+         
+        switch(indType) {
+            
             case this.TYPE_FILHOTE:
                 return this.IND_TYPE_IDADE_FILHOTE;
 
@@ -107,12 +147,30 @@ export class AnimalUtils {
             case this.TYPE_IDOSO:
                 return this.IND_TYPE_IDADE_IDOSO;
 
+            default:
+                return '-';
+        }
+    }
+
+    public static getIndCastradoType(indType) {                
+         
+        switch(indType) {
+
             case this.TYPE_CASTRADO_NAO:
                 return this.IND_TYPE_CASTRADO_NAO;                
 
             case this.TYPE_CASTRADO_SIM:
                 return this.IND_TYPE_CASTRADO_SIM; 
-                
+
+            default:
+                return '-';
+        }
+    }
+
+    public static getIndPorteType(indType) {                
+         
+        switch(indType) {         
+
             case this.TYPE_PORTE_P:
                 return this.IND_TYPE_PORTE_P;
 
@@ -120,7 +178,7 @@ export class AnimalUtils {
                 return this.IND_TYPE_PORTE_M;                
 
             case this.TYPE_PORTE_G:
-                return this.IND_TYPE_PORTE_G;                 
+                return this.IND_TYPE_PORTE_G;   
 
             default:
                 return '-';
@@ -128,10 +186,10 @@ export class AnimalUtils {
     }
 
     public static enrichmentAnimal(animal: Animal) {
-            animal.IND_SEXO_ANIMAL = this.getAnimalType(animal.IND_SEXO_ANIMAL);
-            animal.IND_IDADE = this.getAnimalType(animal.IND_IDADE);
-            animal.IND_CASTRADO = this.getAnimalType(animal.IND_CASTRADO);
-            animal.IND_PORTE_ANIMAL = this.getAnimalType(animal.IND_PORTE_ANIMAL);
+            animal.IND_SEXO_ANIMAL = this.getSexoType(animal.IND_SEXO_ANIMAL);
+            animal.IND_IDADE = this.getIdadeType(animal.IND_IDADE);
+            animal.IND_CASTRADO = this.getCastradoType(animal.IND_CASTRADO);
+            animal.IND_PORTE_ANIMAL = this.getPorteType(animal.IND_PORTE_ANIMAL);
         return animal;
     }
     
