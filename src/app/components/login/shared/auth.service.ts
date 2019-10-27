@@ -9,7 +9,9 @@ import { Login } from './login.model';
 })
 export class AuthService {
 
-    urlService = `${environment.urlApi}/Auth.php`
+    urlService = `${environment.urlApi}/Auth.php`;
+
+    private SESSION_COOKIE_NAME = 'PHPSESSID';
 
     public constructor(private http: HttpClient, private cookieService: CookieService) {}
 
@@ -19,7 +21,11 @@ export class AuthService {
     }
 
     getSessionId() {
-        return this.cookieService.get('PHPSESSID');
+        return this.cookieService.get(this.SESSION_COOKIE_NAME);
+    }
+
+    clearSessionId() {
+        this.cookieService.delete(this.SESSION_COOKIE_NAME);
     }
 
     login(user: Login) {

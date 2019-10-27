@@ -1,3 +1,4 @@
+import { AuthService } from './../login/shared/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -14,7 +15,7 @@ export class AdminMenuComponent implements OnInit {
     { label: 'Usuários', icon: 'fa fa-user', route: 'usuario' },
   ]
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -24,7 +25,12 @@ export class AdminMenuComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigate(['']);
+    this.authService.logout().subscribe((response: any) => {
+      if(response.sucesso) {
+        this.authService.clearSessionId();
+        this.router.navigate(['']);
+      }
+    });
   }
 
 }
