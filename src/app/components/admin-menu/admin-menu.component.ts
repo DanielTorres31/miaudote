@@ -27,8 +27,7 @@ export class AdminMenuComponent implements OnInit {
   logout() {
     this.authService.logout().subscribe((response: any) => {
       if(response.sucesso) {
-        this.authService.clearSessionId();
-        this.router.navigate(['']);
+        this.authService.closeSession();
       }
     });
   }

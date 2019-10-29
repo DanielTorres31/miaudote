@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
@@ -13,7 +14,7 @@ export class AuthService {
 
     private SESSION_COOKIE_NAME = 'PHPSESSID';
 
-    public constructor(private http: HttpClient, private cookieService: CookieService) {}
+    public constructor(private http: HttpClient, private cookieService: CookieService, private router: Router) {}
 
     isUserLogged() {
         const sessionId = this.getSessionId();
@@ -26,6 +27,11 @@ export class AuthService {
 
     clearSessionId() {
         this.cookieService.delete(this.SESSION_COOKIE_NAME);
+    }
+
+    closeSession() {
+        this.clearSessionId();
+        this.router.navigate(['']);
     }
 
     login(user: Login) {
