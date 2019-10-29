@@ -27,7 +27,8 @@ export class AnimalFormComponent implements OnInit {
   sexos = AnimalUtils.sexo;
   castradoOptions = AnimalUtils.castrado;
 
-  imageChangedEvent: any = '';
+  imageChangedEvent: any = null;
+  imageBase64: string = null;
 
   institutions: Institution[] = new Array<Institution>();
 
@@ -44,8 +45,9 @@ export class AnimalFormComponent implements OnInit {
     this.route.params.subscribe(param => {
       if (param['id']) {
         this.titleEditAnimal();
-        this.animalService.findById(param['id']).subscribe((response: any) => {
+        this.animalService.findById(param['id'], true).subscribe((response: any) => {
           this.animal = response.data;
+          this.imageBase64 = this.animal.BIN_FOTO;
         });
       } else {
         this.titleNewAnimal();

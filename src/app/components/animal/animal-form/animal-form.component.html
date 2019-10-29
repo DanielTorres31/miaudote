@@ -85,7 +85,7 @@
                 </div>
                 <div class="col">
                     <div class="image-preview">
-                        <image-cropper [imageChangedEvent]="imageChangedEvent" [aspectRatio]="3 / 4"
+                        <image-cropper [imageChangedEvent]="imageChangedEvent" [imageBase64]="imageBase64" [aspectRatio]="3 / 4"
                             [resizeToWidth]="400" (imageCropped)="imageCropped($event)"></image-cropper>
                     </div>
                 </div>
