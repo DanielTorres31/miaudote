@@ -7,7 +7,7 @@
                         <h4 class="title">Olá, eu sou o {{animal.NOM_ANIMAL}}</h4>
                     </div>
                     <div class="d-flex justify-content-center ui-g-12">
-                        <img *ngIf="animal.BIN_FOTO" [src]="animal.BIN_FOTO" class="image-card" />
+                        <img id="responsive" *ngIf="animal.BIN_FOTO" [src]="animal.BIN_FOTO" class="image-card" />
                     </div>
                 </div>
                 <div class="ui-g-12 ui-md-7 ui-lg-8 ui-g-nopad">
@@ -15,46 +15,43 @@
                         <h3 class="title">Algumas informações sobre mim:</h3>
                     </div>
                     <div class="ui-g-12 ui-g-nopad">
-                        <table class="table">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">SEXO</th>
-                                    <th scope="col">ESPÉCIE</th>
-                                    <th scope="col">IDADE</th>
-                                    <th scope="col">CASTRADO</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ animal.IND_SEXO_ANIMAL }}</td>
-                                    <td>{{ animal.DES_ESPECIE }}</td>
-                                    <td>{{ animal.IND_IDADE }}</td>
-                                    <td>{{ animal.IND_CASTRADO }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">PORTE</th>
-                                    <th scope="col">VACINA</th>
-                                    <th scope="col">OBSERVAÇÃO</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{ animal.IND_PORTE_ANIMAL }}</td>
-                                    <td>{{ animal.DES_VACINA }}</td>
-                                    <td>{{ animal.DES_OBSERVACAO }}</td>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="ui-g-12 ui-g-nopad">
+                        <p-card class="card">
+                            <div class="ui-g-12 ui-md-6 ui-lg-3 ui-g-nopad">
+                                <p class="detail">Sexo: {{ animal.IND_SEXO_ANIMAL }} </p>
+                            </div>
+                            <div class="ui-g-12 ui-md-6 ui-lg-3 ui-g-nopad">
+                                <p class="detail">Porte: {{ animal.IND_PORTE_ANIMAL }} </p>
+                            </div>
+                            <div class="ui-g-12 ui-md-6 ui-lg-3 ui-g-nopad">
+                                <p class="detail">Idade: {{ animal.IND_IDADE }} </p>
+                            </div>
+                            <div class="ui-g-12 ui-md-6 ui-lg-3 ui-g-nopad">
+                                <p class="detail">Castrado: {{ animal.IND_CASTRADO }} </p>
+                            </div>
+                            <div class="ui-g-12 ui-md-6 ui-lg-12 ui-g-nopad effect">
+                                <p class="detail">Temperamento: {{ animal.DES_TEMPERAMENTO }} </p>
+                            </div>
+                            <div class="ui-g-12 ui-md-12 ui-lg-12 ui-g-nopad effect">
+                                <p class="detail">Vacinas: {{ animal.DES_VACINA }} </p>
+                            </div>
+                            <div class="ui-g-12 ui-md-12 ui-lg-12 ui-g-nopad effect_back">
+                                <p class="detail">Observação: {{ animal.DES_OBSERVACAO }} </p>
+                            </div>
+                        </p-card>
+                    </div> 
+                    <div class="ui-g-12 ui-g-nopad effect">
                         <h3 class="title">Gostou de mim? Gostaria de me adotar?</h3>
                         <h2 class="title">Entre em contato</h2>
                         <p-card class="card">
-                            <p class="detail">Minha familia hoje: {{ animal.NOM_INSTITUICAO }} </p>
-                            <p class="detail">Telefone para contato: {{ institution.NUM_TELEFONE }}</p>
+                            <div class="ui-g-12 ui-md-6 ui-lg-6 ui-g-nopad effect">
+                                <p class="detail">Minha familia hoje: {{ animal.NOM_INSTITUICAO }} </p>
+                            </div>
+                            <div class="ui-g-12 ui-md-6 ui-lg-6 ui-g-nopad effect">
+                                <p class="detail">Telefone para contato: {{ institution.NUM_TELEFONE }}</p>
+                            </div>
+                            <div class="ui-g-12 ui-md-6 ui-lg-12 ui-g-nopad back_email">
+                                <p class="detail">E-mail: {{ institution.DES_EMAIL }}</p>
+                            </div>
                         </p-card>
                     </div>
                 </div>
