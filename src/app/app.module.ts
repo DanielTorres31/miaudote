@@ -1,3 +1,4 @@
+import { InterceptorHttp } from './utils/interceptor-http.service';
 import { ApiResponseUtils } from './utils/api-response-utils';
 import { AnimalFormModule } from './components/animal/animal-form/animal-form.module';
 import { AuthenticatedGuard } from './guard/authenticated.guard';
@@ -11,7 +12,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TopMenuModule } from './components/top-menu/top-menu.module';
 import { FooterModule } from './components/footer/footer.module';
 import { AboutUsModule } from './components/about-us/about-us.module';
@@ -67,6 +68,7 @@ import { ToastModule } from 'primeng/toast';
     AdminPageGuard,
     LoginPageGuard,
     AuthenticatedGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorHttp, multi: true },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent]
