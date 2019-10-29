@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     }
 
     this.authService.login(this.login).subscribe((response: any) => {
-      if (!response.erro) {
+      if (response.sucesso) {
         this.router.navigate(['admin']);
       }
     }, () => this.messageService.add( MessageUtils.createErrorMessage( Messages.LOGIN_ERRO, this.MESSAGE_KEY ) ))
