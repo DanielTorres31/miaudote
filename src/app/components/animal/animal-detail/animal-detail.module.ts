@@ -13,8 +13,6 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
   imports: [
     CommonModule,
     CardModule,
-    InputTextModule,
-    InputTextareaModule
   ],
   exports: [AnimalDetailComponent],
   providers: [AnimalService]
