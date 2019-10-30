@@ -32,8 +32,6 @@ export class AnimalDetailComponent implements OnInit {
     this.animalService.findById(idAnimal, true).subscribe((response: any) => {
       this.animal = AnimalUtils.enrichmentAnimal(response.data);
       this.findInstitution(this.animal.INSTITUICAO_COD_INSTITUICAO);
-     
-      console.log(this.animal.IND_SEXO_ANIMAL);
     });
   }
 
@@ -41,10 +39,6 @@ export class AnimalDetailComponent implements OnInit {
     this.institutionService.findById(idInstitution).subscribe((response: any) => {
       this.institution = response.data;
     });
-  }
-
-  defineIdResponsive() {
-    return isMobile() ? "responsiveTextArea" : "responsive";
   }
 
 }

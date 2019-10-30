@@ -7,7 +7,7 @@
                         <h4 class="title">Olá, eu sou o {{animal.NOM_ANIMAL}}</h4>
                     </div>
                     <div class="d-flex justify-content-center ui-g-12">
-                        <img id="responsive" *ngIf="animal.BIN_FOTO" [src]="animal.BIN_FOTO" class="image-card" />
+                        <img *ngIf="animal.BIN_FOTO" [src]="animal.BIN_FOTO" class="image-card" />
                     </div>
                 </div>
                 <div class="ui-g-12 ui-md-7 ui-lg-8 ui-g-nopad">
