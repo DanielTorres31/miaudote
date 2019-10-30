@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AnimalDetailComponent } from './animal-detail.component';
 import { AnimalService } from 'src/app/components/animal/shared/animal.service';
 import {CardModule} from 'primeng/card';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputTextareaModule} from 'primeng/inputtextarea';
 
 
 
@@ -10,7 +12,9 @@ import {CardModule} from 'primeng/card';
   declarations: [AnimalDetailComponent],
   imports: [
     CommonModule,
-    CardModule
+    CardModule,
+    InputTextModule,
+    InputTextareaModule
   ],
   exports: [AnimalDetailComponent],
   providers: [AnimalService]

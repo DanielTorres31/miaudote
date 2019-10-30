@@ -5,6 +5,7 @@ import { AnimalService } from 'src/app/components/animal/shared/animal.service';
 import { Animal } from 'src/app/components/animal/shared/animal.model';
 import { AnimalUtils } from './../shared/animal-utils';
 import { Institution } from '../../institution/shared/institution.model';
+import { isMobile } from 'src/app/utils/screen-utils';
 
 @Component({
   selector: 'app-animal-detail',
@@ -31,6 +32,8 @@ export class AnimalDetailComponent implements OnInit {
     this.animalService.findById(idAnimal, true).subscribe((response: any) => {
       this.animal = AnimalUtils.enrichmentAnimal(response.data);
       this.findInstitution(this.animal.INSTITUICAO_COD_INSTITUICAO);
+     
+      console.log(this.animal.IND_SEXO_ANIMAL);
     });
   }
 
@@ -38,6 +41,10 @@ export class AnimalDetailComponent implements OnInit {
     this.institutionService.findById(idInstitution).subscribe((response: any) => {
       this.institution = response.data;
     });
+  }
+
+  defineIdResponsive() {
+    return isMobile() ? "responsiveTextArea" : "responsive";
   }
 
 }
