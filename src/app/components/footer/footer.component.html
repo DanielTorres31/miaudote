@@ -2,16 +2,26 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-8 col-sm-8 col-md-8 text-left text-white" data-toggle="collapse">
-          <h3 class="text-white">Sobre</h3>
-          <p>Esse site foi desenvolvido pelos alunos do curso de Sistemas de Informação e Medicina Veterinária do Centro Universitário Newton Paiva</p>
+          <h3 class="text-white title">Sobre</h3>
+          <p class="detail">Esse site foi desenvolvido pelos alunos do curso de Sistemas de Informação e Medicina Veterinária do Centro Universitário Newton Paiva</p>
         </div>
         <div class="col-xs-4 col-sm-4 col-md-4">
-          <h3 class="text-white">Contatos</h3>
-          <ul class="list-unstyled list-inline social text-left">
-            <li *ngFor="let item of items" class="list-inline-item">
-                <a id="itens" href="{{item.url}}" target="_blank"><i id="{{item.id}}" class="{{item.icon}}"></i></a>
-            </li>            
-          </ul>
+          <h3 class="text-white title">Contatos</h3>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8">
+              <p class="detail">Pelo nosso instagram:</p>
+            </div> 
+            <div class="col-xs-12 col-sm-12 col-md-2">
+              <ul class="list-unstyled list-inline social text-left">
+                <li *ngFor="let item of items" class="list-inline-item">
+                    <a id="itens" href="{{item.url}}" target="_blank"><i id="{{item.id}}" class="{{item.icon}}"></i></a>
+                </li>            
+              </ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <p class="detail">Ou pelo e-mail: miaudote@gmail.com</p>
+            </div> 
+          </div>
         </div>        
       </div>
     </div>
