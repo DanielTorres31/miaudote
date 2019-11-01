@@ -42,7 +42,7 @@
             <label for="divIdade">Idade:</label>
             <div id="divIdade">
                 <select class="custom-select" (click)="idadeChanged($event.target.value)">
-                    <option selected>Escolha a idade</option>
+                    <option selected value="">Escolha a idade</option>
                     <option *ngFor="let idade of idadeOptions" [value]="idade.value">{{ idade.label }}</option>
                 </select>
             </div>

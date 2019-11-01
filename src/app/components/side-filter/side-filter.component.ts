@@ -1,5 +1,5 @@
 import { AnimalUtils } from './../animal/shared/animal-utils';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { isMobile } from '../../utils/screen-utils';
 import { SideFilter } from './shared/side-filter.model';
 
@@ -15,23 +15,25 @@ export class SideFilterComponent implements OnInit {
   header = 'Filtros';
 
   especieOptions = [
-    {label: 'Todos', value: 'Todos'},
+    {label: 'Todos', value: ''},
     ...AnimalUtils.especie
   ]
 
   porteOptions = [
-    {label: 'Todos', value: 'Todos'},
+    {label: 'Todos', value: ''},
     ...AnimalUtils.porte
   ]
 
   sexoOptions = [
-    {label: 'Todos', value: 'Todos'},
+    {label: 'Todos', value: ''},
     ...AnimalUtils.sexo
   ]
 
   idadeOptions = AnimalUtils.idade;
 
-  filter: SideFilter = new SideFilter();
+  filter: SideFilter = new SideFilter('', '', '', '', '');
+
+  @Output() selectedFilter = new EventEmitter();
 
   constructor() { }
 
@@ -48,7 +50,9 @@ export class SideFilterComponent implements OnInit {
   }
 
   applyFilter() {
-    console.log(this.filter);
+    this.selectedFilter.emit({
+      filter: this.filter
+    });
   }
 
   especieChanged(valueChanged: any) {
