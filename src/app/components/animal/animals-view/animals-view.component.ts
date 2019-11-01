@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AnimalService } from 'src/app/components/animal/shared/animal.service';
 import { Animal } from 'src/app/components/animal/shared/animal.model';
 
@@ -9,14 +9,11 @@ import { Animal } from 'src/app/components/animal/shared/animal.model';
 })
 export class AnimalsViewComponent implements OnInit {
 
-  constructor(private animalService: AnimalService) { }
+  constructor() { }
 
-  animals: Animal[] = new Array<Animal>();
+  @Input() animals: Animal[] = new Array<Animal>();
 
   ngOnInit() {
-    this.animalService.findAll(true).subscribe((response: any) => {
-      this.animals = response.data;
-    });
   }
 
 }
