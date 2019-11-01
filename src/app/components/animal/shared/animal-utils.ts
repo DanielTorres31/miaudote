@@ -7,11 +7,11 @@ export class AnimalUtils {
     public static IND_TYPE_SEXO_FEMININO = 'F';
     public static TYPE_FEMININO = 'Fêmea';
     
-    public static IND_TYPE_IDADE_FILHOTE = '1';
+    public static IND_TYPE_IDADE_FILHOTE = '0';
     public static TYPE_FILHOTE = 'Filhote';
-    public static IND_TYPE_IDADE_ADULTO = '2';
+    public static IND_TYPE_IDADE_ADULTO = '1';
     public static TYPE_ADULTO = 'Adulto';
-    public static IND_TYPE_IDADE_IDOSO = '3';
+    public static IND_TYPE_IDADE_IDOSO = '2';
     public static TYPE_IDOSO = 'Idoso';
     
     public static IND_TYPE_CASTRADO_NAO = 'F';
