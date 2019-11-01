@@ -1,3 +1,4 @@
+import { SideFilter } from './../../side-filter/shared/side-filter.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
@@ -24,6 +25,14 @@ export class AnimalService {
     return this.httpClient.get(`${this.urlService}/${id}`, {
       params: {
         retornarImagem: retornarImagem ? 'T' : 'F'
+      }
+    });
+  }
+
+  filterAnimals(filter: SideFilter, retornarImagem: boolean = false) {
+    return this.httpClient.post(this.urlService, filter, {
+      params: {
+        acao: 'filtro'
       }
     });
   }
