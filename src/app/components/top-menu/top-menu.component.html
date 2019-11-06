@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark black-menu">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false">
+    <button *ngIf="isMobileButtonVisible" class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="isCollapsed" [isAnimated]="true">
         <a class="navbar-brand">
             <img src="../../../assets/logo/logomiaudote.png" width="30" height="35" />
         </a>

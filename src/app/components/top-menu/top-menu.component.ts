@@ -1,3 +1,4 @@
+import { isMobile } from 'src/app/utils/screen-utils';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,6 +11,9 @@ export class TopMenuComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  isCollapsed: boolean = false;
+  isMobileButtonVisible: boolean = false;
+
   items = [
     {label: 'INÍCIO', route: ''},
     {label: 'QUEM SOMOS', route: 'quemsomos'},
@@ -18,6 +22,13 @@ export class TopMenuComponent implements OnInit {
   ]
 
   ngOnInit() {
+    if(isMobile()) {
+      this.isCollapsed = true;
+      this.isMobileButtonVisible = true;
+    } else {
+      this.isCollapsed = false;
+      this.isMobileButtonVisible = false;
+    }
   }
 
   navigate(route: string) {
