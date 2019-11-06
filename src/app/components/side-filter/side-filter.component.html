@@ -1,16 +1,17 @@
 <div class="d-flex justify-content-center">
-    <button *ngIf="isMobileButtonVisible" class="btn btn-primary filter-button-mobile" data-toggle="collapse" href="#side-filter" role="button" aria-expanded="false"
-        aria-controls="side-filter">
+    <button *ngIf="isMobileButtonVisible" class="btn btn-primary filter-button-mobile" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="side-filter">
         <i id="filter-icon" class="fa fa-filter" aria-hidden="true"></i>
     </button>
 </div>
 
-<div [class]="defineFilterClass()" id="side-filter">
+<div id="side-filter" [collapse]="isCollapsed" [isAnimated]="true">
     <div class="card filter">
         <form>
             <div class="form-group">
                 <label for="inputNome">Nome:</label>
-                <input id="inputNome" class="form-control" type="text" placeholder="Digite o nome do pet" name="nome" [(ngModel)]="filter.nome" >
+                <input id="inputNome" class="form-control" type="text" placeholder="Digite o nome do pet" name="nome"
+                    [(ngModel)]="filter.nome">
             </div>
 
             <hr>
@@ -18,15 +19,16 @@
             <label for="divEspecie">Espécie:</label>
             <div id="divEspecie">
                 <app-radio-button *ngFor="let especie of especieOptions; let i = index" [element]="especie"
-                    [name]="'especie'" [id]="'especie' + (i + 1)" (valueChanged)="especieChanged($event)" ></app-radio-button>
+                    [name]="'especie'" [id]="'especie' + (i + 1)" (valueChanged)="especieChanged($event)">
+                </app-radio-button>
             </div>
 
             <hr>
 
             <label for="divPorte">Porte:</label>
             <div id="divPorte">
-                <app-radio-button *ngFor="let porte of porteOptions; let i = index;" [element]="porte"
-                    [name]="'porte'" [id]="'porte' + (i + 1)" (valueChanged)="porteChanged($event)" ></app-radio-button>
+                <app-radio-button *ngFor="let porte of porteOptions; let i = index;" [element]="porte" [name]="'porte'"
+                    [id]="'porte' + (i + 1)" (valueChanged)="porteChanged($event)"></app-radio-button>
             </div>
 
             <hr>
@@ -34,7 +36,7 @@
             <label for="divSexo">Sexo:</label>
             <div id="divSexo">
                 <app-radio-button *ngFor="let sexo of sexoOptions; let i = index" [element]="sexo" [name]="'sexo'"
-                    [id]="'sexo' + (i + 1)" (valueChanged)="sexoChanged($event)" ></app-radio-button>
+                    [id]="'sexo' + (i + 1)" (valueChanged)="sexoChanged($event)"></app-radio-button>
             </div>
 
             <hr>

@@ -11,7 +11,8 @@ import { SideFilter } from './shared/side-filter.model';
 export class SideFilterComponent implements OnInit {
 
   isMobileButtonVisible: boolean = true;
-  
+  isCollapsed: boolean = false;
+
   header = 'Filtros';
 
   especieOptions = [
@@ -38,15 +39,13 @@ export class SideFilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  defineFilterClass() {
     if(isMobile()) {
-      this.enableMobileButton();
-      return 'collapse'
+      this.isMobileButtonVisible = true;
+      this.isCollapsed = true;
+    } else {
+      this.isMobileButtonVisible = false;
+      this.isCollapsed = false;
     }
-    this.disableMobileButton()
-    return '';
   }
 
   applyFilter() {
